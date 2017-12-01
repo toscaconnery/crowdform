@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Login
+Route::post('/login', 'UserController@login')->name('user.login');
+
+// Register
+Route::post('/register', 'UserCOntroller@registerUser')->name('user.register');
+
+Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
+
+
