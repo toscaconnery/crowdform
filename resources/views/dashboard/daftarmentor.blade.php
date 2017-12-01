@@ -9,10 +9,10 @@
   <!-- MAIN CONTENT -->
   <div class="main-content">
   		<div class="container-fluid">
-  			<h3 class="page-title">Ide Bisnis</h3>
+  			<h3 class="page-title">Daftar Mentor Bisnis</h3>
         <div class="row">
           <div class="col-md-4">
-            <button type="button" class="btn btn-success" name="button">Tambah Ide Bisnis</button><br>
+            <button type="button" class="btn btn-success" name="button">Tambah Data Mentor</button><br>
           </div>
         </div><br>
   		    <div class="row">
@@ -20,7 +20,7 @@
               <!-- PANEL WITH FOOTER -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Judul Ide bisnis</h3>
+                  <h3 class="panel-title">Nama Mentor</h3>
                   <div class="right">
                     <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                   </div>
@@ -29,7 +29,7 @@
                   <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
-                  <h5>Nama Tim</h5>
+                  <h5>Rating Mentor</h5>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
@@ -38,7 +38,7 @@
               <!-- PANEL WITH FOOTER -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Judul Ide bisnis</h3>
+                  <h3 class="panel-title">Nama Mentor</h3>
                   <div class="right">
                     <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                   </div>
@@ -47,7 +47,7 @@
                   <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
-                  <h5>Nama Tim</h5>
+                  <h5>Rating Mentor</h5>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
@@ -56,7 +56,7 @@
               <!-- PANEL WITH FOOTER -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Judul Ide bisnis</h3>
+                  <h3 class="panel-title">Nama Mentor</h3>
                   <div class="right">
                     <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                   </div>
@@ -65,7 +65,7 @@
                   <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
-                  <h5>Nama Tim</h5>
+                  <h5>Rating Mentor</h5>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->

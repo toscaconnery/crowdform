@@ -3,7 +3,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.html"><img src="{{URL('')}}/dashboard/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href="index.html"><img src="{{URL('')}}/dashboard/img/logo-CrowdForm.png" alt="CrowdForm Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -29,20 +29,10 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Basic Use</a></li>
-								<li><a href="#">Working With Data</a></li>
-								<li><a href="#">Security</a></li>
-								<li><a href="#">Troubleshooting</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{URL('')}}/dashboard/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
 						<!-- <li>
@@ -60,7 +50,7 @@
 					<ul class="nav">
 						<li><a href="" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="{{URL('idebisnis')}}" class=""><i class="lnr lnr-code"></i> <span>Ide Bisnis</span></a></li>
-						<li><a href="" class=""><i class="lnr lnr-chart-bars"></i> <span>Daftar Mentor</span></a></li>
+						<li><a href="{{URL('daftarmentor')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Daftar Mentor</span></a></li>
 						<li><a href="" class=""><i class="lnr lnr-cog"></i> <span>Daftar Bimbingan</span></a></li>
 						<li><a href="" class=""><i class="lnr lnr-alarm"></i> <span>Data Kelompok</span></a></li>
 						<!-- <li>

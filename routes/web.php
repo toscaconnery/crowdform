@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('beranda');
 });
+
+Route::get('/idebisnis', function(){
+  return view('dashboard/idebisnis');
+});
+
+Route::get('/daftarmentor', function(){
+  return view('dashboard/daftarmentor');
+});
