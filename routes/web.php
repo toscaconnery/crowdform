@@ -22,3 +22,11 @@ Route::get('/idebisnis', function(){
 Route::get('/daftarmentor', function(){
   return view('dashboard/daftarmentor');
 });
+
+Route::get('/daftarbimbingan', function(){
+  return view('dashboard/daftarbimbingan');
+});
+
+Route::get('/datakelompok', function(){
+  return view('dashboard/datakelompok');
+});

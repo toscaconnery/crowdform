@@ -49,10 +49,10 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="{{URL('idebisnis')}}" class=""><i class="lnr lnr-code"></i> <span>Ide Bisnis</span></a></li>
-						<li><a href="{{URL('daftarmentor')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Daftar Mentor</span></a></li>
-						<li><a href="" class=""><i class="lnr lnr-cog"></i> <span>Daftar Bimbingan</span></a></li>
-						<li><a href="" class=""><i class="lnr lnr-alarm"></i> <span>Data Kelompok</span></a></li>
+						<li><a href="{{URL('idebisnis')}}" class=""><i class="lnr lnr-rocket"></i> <span>Ide Bisnis</span></a></li>
+						<li><a href="{{URL('daftarmentor')}}" class=""><i class="lnr lnr-user"></i> <span>Daftar Mentor</span></a></li>
+						<li><a href="{{URL('daftarbimbingan')}}" class=""><i class="lnr lnr-calendar-full"></i> <span>Daftar Bimbingan</span></a></li>
+						<li><a href="{{URL('datakelompok')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
 						<!-- <li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">

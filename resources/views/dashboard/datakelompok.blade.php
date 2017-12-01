@@ -9,18 +9,34 @@
   <!-- MAIN CONTENT -->
   <div class="main-content">
   		<div class="container-fluid">
-  			<h3 class="page-title">Daftar Mentor Bisnis</h3>
+  			<h3 class="page-title">Data Kelompok</h3>
         <div class="row">
           <div class="col-md-4">
-            <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#myModal">Tambah Data Mentor</button><br>
+            <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#myModal">Edit data Kelompok</button><br>
           </div>
         </div><br>
+        <div class="row">
+						<div class="col-md-12">
+							<!-- PANEL HEADLINE -->
+							<div class="panel panel-headline">
+								<div class="panel-heading">
+									<h3 class="panel-title">Nama Kelompok</h3>
+									<p class="panel-subtitle">Deskripsi Singkat Kelompok</p>
+								</div>
+								<div class="panel-body">
+									<h4>Deskripsi Bisnis Kelompok</h4>
+									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
+								</div>
+							</div>
+							<!-- END PANEL HEADLINE -->
+						</div>
+          </div>
   		    <div class="row">
             <div class="col-md-4">
               <!-- PANEL WITH FOOTER -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Nama Mentor</h3>
+                  <h3 class="panel-title">Nama Anggota 1</h3>
                   <div class="right">
                     <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                   </div>
@@ -29,7 +45,7 @@
                   <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
-                  <h5>Rating Mentor</h5>
+                  <h5>No.Hp</h5>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
@@ -38,7 +54,7 @@
               <!-- PANEL WITH FOOTER -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Nama Mentor</h3>
+                  <h3 class="panel-title">Nama Anggota 2</h3>
                   <div class="right">
                     <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                   </div>
@@ -47,7 +63,7 @@
                   <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
-                  <h5>Rating Mentor</h5>
+                  <h5>No.Hp</h5>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
@@ -56,7 +72,7 @@
               <!-- PANEL WITH FOOTER -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Nama Mentor</h3>
+                  <h3 class="panel-title">Nama Anggota 3</h3>
                   <div class="right">
                     <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                   </div>
@@ -65,7 +81,7 @@
                   <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
-                  <h5>Rating Mentor</h5>
+                  <h5>No.Hp</h5>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
@@ -80,25 +96,24 @@
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Tambah Data Mentor</h4>
+        <h4 class="modal-title">Tambah Data Ide Bisnis</h4>
       </div>
       <div class="modal-body">
           <form class="form-horizontal" action="" method="post">
               <div class="form-group">
-                <label class="control-label col-sm-2">Nama Mentor</label>
+                <label class="control-label col-sm-2">Judul</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Mentor...">
+                  <input type="text" class="form-control" name="judul" placeholder="Masukkan judul ide bisnis...">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-sm-2">No.Hp</label>
+                <label class="control-label col-sm-2">Deskripsi</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" name="hp" placeholder="Masukkan No.hp...">
+                  <textarea class="form-control" name="deskripsi" placeholder="Masukkan Deskripsi ide bisnis..."></textarea>
                 </div>
               </div>
               <div class="form-group">
