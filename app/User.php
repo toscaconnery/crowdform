@@ -9,7 +9,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'user';
+    protected $table = 'users';
     protected $primaryKey = 'user_id';
     public $incrementing = true;
     public $timestamps = true;
