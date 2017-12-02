@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/idebisnis', function(){
   return view('dashboard/idebisnis');
 });
-Route::post('tambahkanidebisnis', 'IdeController@tambahkanIde');
+Route::post('tambahidebisnis', 'IdeController@tambahIdeBisnis')->name('tambahIdeBisnis');
 
 Route::get('/daftarmentor', function(){
   return view('dashboard/daftarmentor');
@@ -40,8 +40,9 @@ Route::post('/registeruser', 'UserController@registerUser')->name('user.register
 
 // Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
-Route::post('/tambahKelompok', 'KelompokController@tambahKelompok')->name('tambahKelompok');
+Route::post('/buatKelompok', 'KelompokController@buatKelompok')->name('buatKelompok');
 
+Route::post('/tambahkanAnggotaKelompok', 'KelompokController@tambahkanAnggotaKelompok')->name('tambahkanAnggotaKelompok');
 // Route::get('/detaildatakelompok', function(){
 //   return view('dashboard/detaildatakelompok');
 // });

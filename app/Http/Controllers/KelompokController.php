@@ -7,7 +7,7 @@ use DB;
 use Auth;
 use App\User;
 use App\Team;
-use App\UserTeam;
+use App\Invitation;
 class KelompokController extends Controller
 {
     // public function dataKelompok(){
@@ -30,7 +30,7 @@ class KelompokController extends Controller
     // 	dd("belum login");
     // }
 
-    public function tambahKelompok(Request $request) {
+    public function buatKelompok(Request $request) {
     	if (Auth::check()) {
     		$cekKetersedian = DB::table('team')->where('team_name', $request->team_name)->count();
     		if($cekKetersedian > 0) {
@@ -38,17 +38,17 @@ class KelompokController extends Controller
     			return back();
     		}
     		else {
-    			//dd(Auth::user()->user_id);
     			$tim = new Team();
     			$tim->team_name = $request->team_name;
+    			$tim->description = $request->description;
     			$tim->package_id = $request->package_id;
     			$tim->save();
-    			//dd($tim->team_id);
-    			$userTeam = new UserTeam();
-    			$userTeam->user_id = Auth::user()->user_id;
-    			$userTeam->team_id = $tim->team_id;
-    			$userTeam->save();
-    			return redirect('/'); 
+
+    			$user = Auth::user();
+    			$user->team_id = $tim->team_id;
+    			$user->save();
+    			
+    			return back(); 
     		}
     	}
     }
@@ -61,27 +61,33 @@ class KelompokController extends Controller
     		else {
     			$this->data['punyaKelompok'] = 1;
     		}
-
+    		$this->data['punyaIde'] = 0;
     		if($this->data['punyaKelompok'] == 1) {
-    			$this->data['kelompok'] = DB::table('team')->where('team_id', $id_kelompok)->get()->first();
-    			$this->data['punyaIde'] = DB::table('idea')->where('team_id', $id_kelompok)->count();
-    		}
-
-    		// $permission = DB::table('user_team')
-    		// 				->where('team_id', $id_kelompok)
-    		// 				->where('user_id', Auth::user()->user_id)
-    		// 				->count();
-    		if ($permission) {
+    			$id_kelompok = Auth::user()->team_id;
     			$this->data['kelompok'] = DB::table('team')->where('team_id', $id_kelompok)->get()->first();
     			$this->data['punyaIde'] = DB::table('idea')->where('team_id', $id_kelompok)->count();
     			if($this->data['punyaIde'] > 0) {
     				$this->data['ideKelompok'] = DB::table('idea')->where('team_id', $id_kelompok)->get()->first();
     			}
-    			return view('dashboard.detaildatakelompok',$this->data);
     		}
-    		else {
-    			dd("Anda tidak termasuk dalam kelompok");
-    		}
+
+    		$this->data['jenisPaket'] = DB::table('package')->get();
+    		$this->data['jenisKategori'] = DB::table('category')->get();
+
+    		return view('dashboard.detaildatakelompok', $this->data);
     	}
+    	else {
+    		return back();
+    	}
+    }
+
+    public function tambahkanAnggotaKelompok(Request $request) {
+    	$user = DB::table('users')->where('email', $request->email)->get()->first();
+    	$invitation = new Invitation();
+    	$invitation->user_id = $user->user_id;
+    	$invitation->team_id = Auth::user()->team_id;
+    	$invitation->status = "Belum dikonfirmasi";
+    	$invitation->save();
+    	return back();
     }
 }
