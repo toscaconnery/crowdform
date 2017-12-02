@@ -22,9 +22,12 @@ class DosenController extends Controller
     	$biodata->interest = $request->interest;
     	$biodata->hobby = $request->hobby;
     	$biodata->major = $request->major;
+    	$biodata->user_id = $request->user_id;
+
+
     	$biodata->save();
 
-    	return "sukses";
+    	return view('dashboard.profil');
     }
 
     public function getDosen(Request $request){
