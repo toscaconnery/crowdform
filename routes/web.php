@@ -33,7 +33,7 @@ Route::get('/profil', function(){
 //Route::post('/login', 'UserController@login')->name('user.login');
 
 // Register
-// Route::post('/register', 'UserController@registerUser')->name('user.register');
+Route::post('/register', 'UserController@registerUser')->name('userregister');
 
 Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
@@ -53,17 +53,11 @@ Route::get('/daftarbimbingan', function(){
 // });
 Route::get('/datakelompok', 'KelompokController@dataKelompok');
 
-Route::get('/register', function(){
-  return view('auth/register');
-});
+// Route::get('/register', function(){
+//   return view('auth/register');
+// });
 
-// Login
-//Route::post('/login', 'UserController@login')->name('user.login');
 
-// Register
-Route::post('/register', 'UserController@registerUser')->name('user.register');
-
-Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
 Auth::routes();
 
