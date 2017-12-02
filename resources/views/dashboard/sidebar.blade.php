@@ -17,19 +17,36 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
 								<i class="lnr lnr-alarm"></i>
-								<span class="badge bg-danger">5</span>
+								@if($jumlahNotifikasi > 0)
+									<span class="badge bg-danger">{{$jumlahNotifikasi}}</span>
+								@else
+									<span class="badge bg-success">{{$jumlahNotifikasi}}</span>
+								@endif
 							</a>
-					<!-- 		<ul class="dropdown-menu notifications">
-								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
+							<ul class="dropdown-menu notifications">
+{{-- 								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
 								<li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
 								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
 								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
 								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
-								<li><a href="#" class="more">See all notifications</a></li>
-							</ul> -->
+								<li><a href="#" class="more">See all notifications</a></li> --}}
+								@foreach($notifikasi as $notifikasi)
+									<li>
+										<a href="#" class="notification-item">
+											<span class="dot bg-success">
+											</span>
+											@if($notifikasi[0] == "invitation")
+												Anda diundang ke tim {{$notifikasi[1]}}.
+												<a href="{{URL('')}}/masukKelompok/{{$notifikasi[2]}}"><button class="btn btn-success">terima</button></a>
+												<a href="{{URL('')}}/abaikanKelompok/{{$notifikasi[2]}}"><button class="btn btn-danger">abaikan</button></a>
+											@endif
+										</a>
+									</li>
+								@endforeach
+							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{URL('')}}/dashboard/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{URL('')}}/dashboard/img/user.png" class="img-circle" alt="Avatar"> <span>{{Auth::user()->first_name}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="{{URL('/profil')}}"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								<li><a href="{{URL('/setting')}}"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>

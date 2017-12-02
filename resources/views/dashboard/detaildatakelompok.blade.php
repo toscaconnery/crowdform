@@ -23,6 +23,7 @@
           </div>    
         <br>
           <div class="row">
+
   						<div class="col-md-12">
   							<!-- PANEL HEADLINE -->
   							<div class="panel panel-headline">
@@ -57,7 +58,7 @@
                 <div class="form-group">
                   {{ csrf_field() }}
                   <label for="email">Email address: </label>
-                  <input type="email" class="form-control">
+                  <input type="email" name="email" class="form-control">
                   <button type="submit" class="btn btn-success" name="button">Tambahkan anggota</button>
                 </div>
               </form>

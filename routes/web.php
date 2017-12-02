@@ -47,6 +47,9 @@ Route::post('/biodata', 'DosenController@setBiodata')->name('biodata.set');
 Route::post('/buatKelompok', 'KelompokController@buatKelompok')->name('buatKelompok');
 
 Route::post('/tambahkanAnggotaKelompok', 'KelompokController@tambahkanAnggotaKelompok')->name('tambahkanAnggotaKelompok');
+
+Route::get('/masukKelompok/{id}', 'KelompokController@masukKelompok');
+Route::get('/abaikanKelompok/{id}', 'KelompokController@abaikanKelompok');
 // Route::get('/detaildatakelompok', function(){
 //   return view('dashboard/detaildatakelompok');
 // });
