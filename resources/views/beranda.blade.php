@@ -199,23 +199,24 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form method="post" action= "{{ route('userregister') }}">
+          <!-- {{ csrf_field() }} -->
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">Nama Depan</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" name="firstname" placeholder="Masukkan nama depan...">
+                <input type="text" class="form-control" name="first_name" placeholder="Masukkan nama depan...">
               </div>
             </div>
             <div class="form-group row">
               <label  class="col-sm-4 col-form-label">Nama Belakang</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" name="lastname" placeholder="Masukkan nama belakang...">
+                <input type="text" class="form-control" name="last_name" placeholder="Masukkan nama belakang...">
               </div>
             </div>
             <div class="form-group row">
               <label  class="col-sm-4 col-form-label">No.HP</label>
               <div class="col-sm-8">
-                <input type="number" class="form-control" name="hp" placeholder="Masukkan No.Hp...">
+                <input type="number" class="form-control" name="phone_number" placeholder="Masukkan No.Hp...">
               </div>
             </div>
             <div class="form-group row">
@@ -228,9 +229,9 @@
               <label  class="col-sm-4 col-form-label">Tipe</label>
               <div class="col-sm-8">
                 <select class="custom-select" name="tipe">
-                  <option value="mentor">Mentor</option>
-                  <option value="mahasiswa">Mahasiswa</option>
-                  <option value="investor">Investor</option>
+                  <option value="1">Mentor</option>
+                  <option value="2">Mahasiswa</option>
+                  <!-- <option value="investor">Investor</option> -->
                 </select>
               </div>
             </div>
@@ -246,11 +247,16 @@
                 <input type="password" class="form-control" name="password2" placeholder="Masukkan Password...">
               </div>
             </div>
-
-          </form>
+            <div class="form-group row">
+              <label  class="col-sm-4 col-form-label">Upload Foto Profil</label>
+              <div class="col-sm-8">
+                <input type="file" class="form-control" name="user_photo" >
+              </div>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-success">Register</button>
+           </form>
         </div>
       </div>
     </div>
