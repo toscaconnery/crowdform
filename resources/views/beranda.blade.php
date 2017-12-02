@@ -16,9 +16,23 @@
             <li class="nav-item">
               <a class="nav-link" data-toggle="modal" data-target="#RegisterModal">Register</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#LoginModal">Login</a>
+            @if(Auth::check())
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
             </li>
+            @else
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#LoginModal">Login</a>
+              </li>
+            @endif
           </ul>
         </div>
       </div>
@@ -149,12 +163,13 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form>
+      <form method="POST" action="{{route('login')}}">
+        <div class="modal-body">
           <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
               <input type="email" class="form-control" name="email" placeholder="Email">
+              {{ csrf_field() }}
             </div>
           </div>
           <div class="form-group row">
@@ -163,11 +178,11 @@
               <input type="password" class="form-control" name="password" placeholder="Password">
             </div>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success">Login</button>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Login</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
