@@ -12,5 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('beranda');
 });
+
+Route::get('/idebisnis', function(){
+  return view('dashboard/idebisnis');
+});
+
+Route::get('/daftarmentor', function(){
+  return view('dashboard/daftarmentor');
+});
+
+// Login
+Route::post('/login', 'UserController@login')->name('user.login');
+
+// Register
+Route::post('/register', 'UserCOntroller@registerUser')->name('user.register');
+
+Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
+
+
