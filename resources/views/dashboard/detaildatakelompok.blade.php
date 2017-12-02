@@ -11,11 +11,14 @@
    
   		<div class="container-fluid">
   			<h3 class="page-title">Detail Data Kelompok</h3>
-        <div class="row">
-          <div class="col-md-4">
-            <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#myModal">Tambah Ide Bisnis</button><br>
+        @if($punyaIde == 0)
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#myModal">Tambah Ide Bisnis</button><br>
+            </div>
           </div>
-        </div><br>
+        @endif
+        <br>
         <div class="row">
 						<div class="col-md-12">
 							<!-- PANEL HEADLINE -->
@@ -26,13 +29,13 @@
 								</div>
                 @if($punyaIde)
                 <div class="panel-body">
-                  <h4>Deskripsi Kelompok</h4>
-                  <p>Anda Belum mempunyai deskripsi kelompok</p>
+                  <h4>Deskripsi Bisnis Kelompok</h4>
+                  <p>{{$ideKelompok}}</p>
                 </div>
                 @else
 								<div class="panel-body">
 									<h4>Deskripsi Bisnis Kelompok</h4>
-									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
+                  <p>Anda Belum mempunyai deskripsi bisnis kelompok</p>
 								</div>
                 @endif
 							</div>

@@ -42,7 +42,7 @@ Route::post('/tambahKelompok', 'KelompokController@tambahKelompok')->name('tamba
 // Route::get('/detaildatakelompok', function(){
 //   return view('dashboard/detaildatakelompok');
 // });
-Route::get('/detaildatakelompok/{id}', 'KelompokController@detailDataKelompok')->name('detaildatakelompok');
+Route::get('/detaildatakelompok', 'KelompokController@detailDataKelompok')->name('detaildatakelompok');
 
 Route::get('/daftarbimbingan', function(){
   return view('dashboard/daftarbimbingan');

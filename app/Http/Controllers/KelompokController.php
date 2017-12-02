@@ -14,14 +14,14 @@ class KelompokController extends Controller
     	if (Auth::check()) {
     		$user = Auth::user();
     		$user_id = $user->user_id;
-    		$this->data['jumlahTim'] = DB::table('user_team')->where('user_id', $user_id)->count();
+    		$this->data['punyaKelompok'] = DB::table('user_team')->where('user_id', $user_id)->count();
 
-    		if($this->data['jumlahTim'] > 0) {
-    			//$this->data['listTim'] = DB::table('user_team')->where('user_id', $user_id)->get();
-    			$this->data['listTim'] = DB::select('SELECT t.team_name, COUNT(u.id) AS jumlah
+    		if($this->data['punyaKelompok'] > 0) {
+    			$kelompok = DB::select('SELECT t.team_name, COUNT(u.id) AS jumlah
     												FROM user_team u, team t
     												WHERE t.team_id = u.team_id
-    												GROUP BY t.team_name');
+    												GROUP BY t.team_name')->first();
+    			$this->data['kelompok'] = $kelompok[0];
     		}
     		$this->data['jenisPaket'] = DB::table('package')->get();
 
