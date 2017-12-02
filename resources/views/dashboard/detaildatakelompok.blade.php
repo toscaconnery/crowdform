@@ -17,7 +17,9 @@
                 <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modalBuatKelompok">Buat Kelompok</button>
               @endif
               @if($punyaIde == 0)
-                <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#myModal">Tambah Ide Bisnis</button>
+                <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modaTambahIde">Tambah Ide Bisnis</button>
+              @else
+                <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modalEditIde">Edit Ide Bisnis</button>
               @endif
             </div>
           </div>    
@@ -146,7 +148,7 @@
 </div>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="modalTambahIde" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -183,16 +185,63 @@
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <button type="submit" class="btn btn-success">Submit</button>
+                  <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
                 </div>
               </div>
           </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+@if($punyaIde == 1)
+<div id="modalEditIde" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Data Ide Bisnis</h4>
+      </div>
+      <div class="modal-body">
+          <form class="form-horizontal" action="{{URL('')}}/editidebisnis/{{$ideKelompok->idea_id}}" method="post">
+              <div class="form-group">
+                {{ csrf_field() }}
+                <label class="control-label col-sm-2">Judul</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="idea_name" value="{{$ideKelompok->idea_name}}" placeholder="Masukkan judul ide bisnis...">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2">Deskripsi</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" name="idea_description" placeholder="Masukkan Deskripsi ide bisnis...">{{$ideKelompok->idea_description}}</textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2">Kategori</label>
+                <div class="col-sm-10">
+
+                  <select class="form-control" name="category_id">
+                    @foreach($jenisKategori as $kategori)
+                      <option value="{{$kategori->category_id}}" {{$ideKelompok->category_id == $kategori->category_id ? "selected" : ""}}>{{$kategori->category_name}}</option>
+                    @endforeach
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-success">Submit</button>
+                  <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          </form>
       </div>
     </div>
   </div>
 </div>
+@endif
 
 <div class="clearfix"></div>
 @include('dashboard.footer')

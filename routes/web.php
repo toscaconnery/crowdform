@@ -19,7 +19,9 @@ Route::get('/idebisnis', function(){
   return view('dashboard/idebisnis');
 });
 
-Route::post('tambahidebisnis', 'IdeController@tambahIdeBisnis')->name('tambahIdeBisnis');
+Route::post('/tambahidebisnis', 'IdeController@tambahIdeBisnis')->name('tambahIdeBisnis');
+
+Route::post('/editidebisnis/{id}', 'IdeController@editIdeBisnis')->name('editIdeBisnis');
 
 Route::get('/daftarmentor', function(){
   return view('dashboard/daftarmentor');
