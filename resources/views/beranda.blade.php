@@ -199,8 +199,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <form method="post" action= "{{ route('userregister') }}">
-          <!-- {{ csrf_field() }} -->
+          <form method="post" action="{{ route('userregisterr') }}">
+          {{ csrf_field() }}
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">Nama Depan</label>
               <div class="col-sm-8">
