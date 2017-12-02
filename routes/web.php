@@ -24,7 +24,7 @@ Route::get('/daftarmentor', function(){
 });
 
 // Login
-Route::post('/login', 'UserController@login')->name('user.login');
+//Route::post('/login', 'UserController@login')->name('user.login');
 
 // Register
 Route::post('/register', 'UserController@registerUser')->name('user.register');

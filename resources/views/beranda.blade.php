@@ -151,8 +151,16 @@
         <h4 class="modal-title">Halaman Login</h4>
       </div>
       <div class="modal-body">
-        <input type="text" name="" value="">
-        <input type="text" name="" value="">
+        <form method="POST" action="{{ route('login')}}">
+          {{ csrf_field() }}
+          <label for="email">Email</label>
+          <input type="email" name="email" >
+          <br>
+          <label for="password">Password</label>
+          <input type="password" name="password">
+          <br>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
