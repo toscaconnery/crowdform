@@ -40,6 +40,10 @@ Route::get('/datakelompok', function(){
   return view('dashboard/datakelompok');
 });
 
+Route::get('/register', function(){
+  return view('auth/register');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

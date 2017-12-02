@@ -14,10 +14,10 @@
               <a class="nav-link" href="{{URL('')}}/Ide/DaftarIde">Daftar Ide</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{URL('')}}/Register/register">Register</a>
+              <a class="nav-link" data-toggle="modal" data-target="#RegisterModal">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#loginModal">Login</a>
+              <a class="nav-link" data-toggle="modal" data-target="#LoginModal">Login</a>
             </li>
           </ul>
         </div>
@@ -139,35 +139,107 @@
       <!-- /.container -->
     </aside>
     <!-- /.banner -->
-    <!-- Modal Login -->
-
-<!-- Modal -->
-<div id="loginModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
+<!-- Modal Login -->
+<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Halaman Login</h4>
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{{ route('login')}}">
-          {{ csrf_field() }}
-          <label for="email">Email</label>
-          <input type="email" name="email" >
-          <br>
-          <label for="password">Password</label>
-          <input type="password" name="password">
-          <br>
-          <button type="submit" class="btn btn-primary">Login</button>
+        <form>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+          </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Login</button>
       </div>
     </div>
-
   </div>
 </div>
-  <!-- /Modal content-->
-    @include('footer')
+  <!-- /Modal login-->
+
+  <!-- Modal register -->
+  <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group row">
+              <label class="col-sm-4 col-form-label">Nama Depan</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" name="firstname" placeholder="Masukkan nama depan...">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label  class="col-sm-4 col-form-label">Nama Belakang</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" name="lastname" placeholder="Masukkan nama belakang...">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label  class="col-sm-4 col-form-label">No.HP</label>
+              <div class="col-sm-8">
+                <input type="number" class="form-control" name="hp" placeholder="Masukkan No.Hp...">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label  class="col-sm-4 col-form-label">Email</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control" name="email" placeholder="Masukkan Email...">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label  class="col-sm-4 col-form-label">Tipe</label>
+              <div class="col-sm-8">
+                <select class="custom-select" name="tipe">
+                  <option value="mentor">Mentor</option>
+                  <option value="mahasiswa">Mahasiswa</option>
+                  <option value="investor">Investor</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label  class="col-sm-4 col-form-label">Password</label>
+              <div class="col-sm-8">
+                <input type="password" class="form-control" name="password" placeholder="Masukkan Password...">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label  class="col-sm-4 col-form-label">Konfirmasi Password</label>
+              <div class="col-sm-8">
+                <input type="password" class="form-control" name="password2" placeholder="Masukkan Password...">
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- /Modal register-->
+
+@include('footer')
