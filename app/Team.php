@@ -11,5 +11,5 @@ class Team extends Model
     protected $primaryKey = 'team_id';
     public $incrementing = true;
     public $timestamps = true;
-    protected $fillable = ['team_name', 'package_id', 'description', 'mentoring_count'];
+    protected $fillable = ['team_name', 'package_id', 'description', 'leader_id', 'mentoring_count'];
 }

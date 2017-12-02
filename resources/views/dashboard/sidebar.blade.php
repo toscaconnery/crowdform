@@ -9,12 +9,29 @@
 				<div class="navbar-btn">
 					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 				</div>
-				<div class="navbar-btn navbar-btn-right">
-					<a class="btn btn-danger update-pro" target="_blank"><i class="lnr lnr-exit"></i> <span>Logout</span></a>
-				</div>
+				@if(Auth::check())
+					<div class="navbar-btn navbar-btn-right">
+						<a class="btn btn-danger update-pro nav-link" href="{{ route('logout') }}" 
+							onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();" >
+                             <i class="lnr lnr-exit"></i>
+                             <span>Logout</span>
+                        </a>
+					</div>
+
+
+                	<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                	</form>
+				@endif
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
+								@if(!isset($notifikasi))
+									@php
+										$jumlahNotifikasi = 0;
+									@endphp
+								@endif
 							<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
 								<i class="lnr lnr-alarm"></i>
 								@if($jumlahNotifikasi > 0)
@@ -30,19 +47,23 @@
 								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
 								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
 								<li><a href="#" class="more">See all notifications</a></li> --}}
-								@foreach($notifikasi as $notifikasi)
-									<li>
-										<a href="#" class="notification-item">
-											<span class="dot bg-success">
-											</span>
-											@if($notifikasi[0] == "invitation")
-												Anda diundang ke tim {{$notifikasi[1]}}.
-												<a href="{{URL('')}}/masukKelompok/{{$notifikasi[2]}}"><button class="btn btn-success">terima</button></a>
-												<a href="{{URL('')}}/abaikanKelompok/{{$notifikasi[2]}}"><button class="btn btn-danger">abaikan</button></a>
-											@endif
-										</a>
-									</li>
-								@endforeach
+								@if($jumlahNotifikasi > 0)
+									@foreach($notifikasi as $notifikasi)
+										<li>
+											<a href="#" class="notification-item">
+												<span class="dot bg-success">
+												</span>
+												@if($notifikasi[0] == "invitation")
+													Anda diundang ke tim {{$notifikasi[1]}}.
+													<a href="{{URL('')}}/masukKelompok/{{$notifikasi[2]}}"><button class="btn btn-success">terima</button></a>
+													<a href="{{URL('')}}/abaikanKelompok/{{$notifikasi[2]}}"><button class="btn btn-danger">abaikan</button></a>
+												@endif
+											</a>
+										</li>
+									@endforeach
+								@else
+									<li><a href="#" class="more">Tidak ada notifikasi.</a></li>
+								@endif
 							</ul>
 						</li>
 						<li class="dropdown">

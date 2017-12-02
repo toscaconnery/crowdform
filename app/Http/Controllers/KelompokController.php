@@ -42,6 +42,7 @@ class KelompokController extends Controller
     			$tim->team_name = $request->team_name;
     			$tim->description = $request->description;
     			$tim->package_id = $request->package_id;
+    			$tim->leader_id = Auth::user()->user_id;
     			$tim->save();
 
     			$user = Auth::user();
