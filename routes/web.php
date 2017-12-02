@@ -23,6 +23,7 @@ Route::get('/daftarmentor', function(){
   return view('dashboard/daftarmentor');
 });
 
+
 Route::get('/daftarbimbingan', function(){
   return view('dashboard/daftarbimbingan');
 });
