@@ -72,42 +72,5 @@
 </div>
 <!--/ MAIN -->
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Tambah Data Ide Bisnis</h4>
-      </div>
-      <div class="modal-body">
-          <form class="form-horizontal" action="" method="post">
-              <div class="form-group">
-                <label class="control-label col-sm-2">Judul</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="judul" placeholder="Masukkan judul ide bisnis...">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2">Deskripsi</label>
-                <div class="col-sm-10">
-                  <textarea class="form-control" name="deskripsi" placeholder="Masukkan Deskripsi ide bisnis..."></textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-              </div>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="clearfix"></div>
 @include('dashboard.footer')
