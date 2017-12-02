@@ -42,7 +42,7 @@ Route::get('/setting', function(){
 
 Route::post('/registeruser', 'UserController@registerUser')->name('user.register');
 
-// Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
+Route::post('/biodata', 'DosenController@setBiodata')->name('biodata.set');
 
 Route::post('/tambahKelompok', 'KelompokController@tambahKelompok')->name('tambahKelompok');
 
