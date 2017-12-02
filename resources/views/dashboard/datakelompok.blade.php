@@ -18,6 +18,16 @@
         <div class="row">
           <div class="col-md-12">
             <!-- TABLE STRIPED -->
+        @if($jumlahTim == 0)
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Anda Belum Punya Kelompok</h3>
+          </div>
+          <div class="panel-body">
+            Silahkan menambahkan sebuah tim untuk bisa mendaftarkan ide.
+          </div>
+        </div>
+        @else
         <div class="panel">
           <div class="panel-heading">
             <h3 class="panel-title">Data Kelompok</h3>
@@ -28,30 +38,27 @@
                 <tr>
                   <th>No</th>
                   <th>Nama Kelompok</th>
-                  <th>Deskripsi</th>
                   <th>Jumlah Anggota</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
+              @php
+                $x = 1;
+              @endphp
               <tbody>
+                @foreach($listTim as $list)
                 <tr>
-                  <td>1</td>
-                  <td>Kelompok 1</td>
-                  <td>qwertyuioasdsadhjs</td>
-                  <td>2</td>
+                  <td>{{$x++}}</td>
+                  <td>{{$list->team_name}}</td>
+                  <td>{{$list->jumlah}}</td>
                   <td><button type="button" class="btn btn-info" name="button">Detail Kelompok</button></td>
                 </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Kelompok 2</td>
-                  <td>qwertyuioasdsadhjs</td>
-                  <td>3</td>
-                  <td><button type="button" class="btn btn-info" name="button">Detail Kelompok</button></td>  
-                </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
         </div>
+        @endif
         <!-- END TABLE STRIPED -->
           </div>
         </div>
@@ -71,17 +78,22 @@
         <h4 class="modal-title">Tambah Data Kelompok</h4>
       </div>
       <div class="modal-body">
-          <form class="form-horizontal" action="" method="post">
+          <form class="form-horizontal" action="{{route('tambahKelompok')}}" method="post">
               <div class="form-group">
                 <label class="control-label col-sm-2">Nama Kelompok</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="judul" placeholder="Masukkan nama kelompok...">
+                  {{ csrf_field() }}
+                  <input type="text" class="form-control" name="team_name" placeholder="Masukkan nama kelompok...">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-sm-2">Deskripsi</label>
+                <label class="control-label col-sm-2">Paket Mentoring</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control" name="deskripsi" placeholder="Masukkan Deskripsi Kelompok..."></textarea>
+                  <select name="package_id" class="form-control">
+                    @foreach($jenisPaket as $paket)
+                      <option value="{{$paket->package_id}}">{{$paket->package_name}}</option>
+                    @endforeach
+                  </select>
                 </div>
               </div>
               <div class="form-group">

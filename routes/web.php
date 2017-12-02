@@ -37,6 +37,8 @@ Route::get('/profil', function(){
 
 Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
+Route::post('/tambahKelompok', 'KelompokController@tambahKelompok')->name('tambahKelompok');
+
 Route::get('/detaildatakelompok', function(){
   return view('dashboard/detaildatakelompok');
 });
@@ -45,9 +47,10 @@ Route::get('/daftarbimbingan', function(){
   return view('dashboard/daftarbimbingan');
 });
 
-Route::get('/datakelompok', function(){
-  return view('dashboard/datakelompok');
-});
+// Route::get('/datakelompok', function(){
+//   return view('dashboard/datakelompok');
+// });
+Route::get('/datakelompok', 'KelompokController@dataKelompok');
 
 Route::get('/register', function(){
   return view('auth/register');
