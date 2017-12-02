@@ -65,59 +65,32 @@
             </div>
           </div>
   		    <div class="row">
-            <div class="col-md-4">
-              <!-- PANEL WITH FOOTER -->
-              <div class="panel">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Nama Anggota 1</h3>
-                  <div class="right">
-                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+            @if($punyaKelompok == 1)
+              @foreach($anggotaKelompok as $anggota)
+                <div class="col-md-4">
+                <!-- PANEL WITH FOOTER -->
+                <div class="panel">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">{{$anggota->first_name}}{{" "}}{{$anggota->last_name}}</h3>
+                    <div class="right">
+                      <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <p>
+                      {{$anggota->email}}
+                      <br>
+                      {{$anggota->phone_number}}
+                    </p>
+                  </div>
+                  <div class="panel-footer">
+                    <h5></h5>
                   </div>
                 </div>
-                <div class="panel-body">
-                  <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-                </div>
-                <div class="panel-footer">
-                  <h5>No.Hp</h5>
-                </div>
+                <!-- END PANEL WITH FOOTER -->
               </div>
-              <!-- END PANEL WITH FOOTER -->
-            </div>
-            <div class="col-md-4">
-              <!-- PANEL WITH FOOTER -->
-              <div class="panel">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Nama Anggota 2</h3>
-                  <div class="right">
-                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-                  </div>
-                </div>
-                <div class="panel-body">
-                  <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-                </div>
-                <div class="panel-footer">
-                  <h5>No.Hp</h5>
-                </div>
-              </div>
-              <!-- END PANEL WITH FOOTER -->
-            </div>
-            <div class="col-md-4">
-              <!-- PANEL WITH FOOTER -->
-              <div class="panel">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Nama Anggota 3</h3>
-                  <div class="right">
-                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-                  </div>
-                </div>
-                <div class="panel-body">
-                  <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-                </div>
-                <div class="panel-footer">
-                  <h5>No.Hp</h5>
-                </div>
-              </div>
-              <!-- END PANEL WITH FOOTER -->
+              @endforeach
+            @endif
             </div>
           </div>
         </div>

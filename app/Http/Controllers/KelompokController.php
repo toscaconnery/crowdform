@@ -70,6 +70,7 @@ class KelompokController extends Controller
     			if($this->data['punyaIde'] > 0) {
     				$this->data['ideKelompok'] = DB::table('idea')->where('team_id', $id_kelompok)->get()->first();
     			}
+    			$this->data['anggotaKelompok'] = DB::table('users')->where('team_id', $id_kelompok)->get();
     		}
 
     		$this->data['jenisPaket'] = DB::table('package')->get();
