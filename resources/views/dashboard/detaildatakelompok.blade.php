@@ -9,13 +9,45 @@
   <!-- MAIN CONTENT -->
   <div class="main-content">
   		<div class="container-fluid">
-  			<h3 class="page-title">Ide Bisnis</h3>
+  			<h3 class="page-title">Detail Data Kelompok</h3>
+        <div class="row">
+          <div class="col-md-4">
+            <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#myModal">Tambah Ide Bisnis</button><br>
+          </div>
+        </div><br>
+        <div class="row">
+						<div class="col-md-12">
+							<!-- PANEL HEADLINE -->
+							<div class="panel panel-headline">
+								<div class="panel-heading">
+									<h3 class="panel-title">Nama Kelompok</h3>
+									<p class="panel-subtitle">Deskripsi Singkat Kelompok</p>
+								</div>
+								<div class="panel-body">
+									<h4>Deskripsi Bisnis Kelompok</h4>
+									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
+								</div>
+							</div>
+							<!-- END PANEL HEADLINE -->
+						</div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <form class="form-inline" action="" method="post">
+                <div class="form-group">
+                  <label for="email">Email address: </label>
+                  <input type="email" class="form-control">
+                  <button type="submit" class="btn btn-success" name="button">Tambahkan anggota</button>
+                </div>
+              </form>
+            </div>
+          </div>
   		    <div class="row">
             <div class="col-md-4">
               <!-- PANEL WITH FOOTER -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Judul Ide bisnis</h3>
+                  <h3 class="panel-title">Nama Anggota 1</h3>
                   <div class="right">
                     <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                   </div>
@@ -24,7 +56,7 @@
                   <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
-                  <h5>Nama Tim</h5>
+                  <h5>No.Hp</h5>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
@@ -33,7 +65,7 @@
               <!-- PANEL WITH FOOTER -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Judul Ide bisnis</h3>
+                  <h3 class="panel-title">Nama Anggota 2</h3>
                   <div class="right">
                     <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                   </div>
@@ -42,7 +74,7 @@
                   <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
-                  <h5>Nama Tim</h5>
+                  <h5>No.Hp</h5>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
@@ -51,7 +83,7 @@
               <!-- PANEL WITH FOOTER -->
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Judul Ide bisnis</h3>
+                  <h3 class="panel-title">Nama Anggota 3</h3>
                   <div class="right">
                     <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                   </div>
@@ -60,7 +92,7 @@
                   <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
-                  <h5>Nama Tim</h5>
+                  <h5>No.Hp</h5>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
