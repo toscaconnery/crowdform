@@ -28,6 +28,10 @@ Route::get('/profil', function(){
   return view('dashboard/profil');
 });
 
+Route::get('/setting', function(){
+  return view('dashboard/setting');
+});
+
 
 // Login
 //Route::post('/login', 'UserController@login')->name('user.login');
@@ -38,7 +42,7 @@ Route::get('/profil', function(){
 
 Route::post('/registeruser', 'UserController@registerUser')->name('user.register');
 
-// Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
+Route::post('/biodata', 'DosenController@setBiodata')->name('biodata.set');
 
 Route::post('/buatKelompok', 'KelompokController@buatKelompok')->name('buatKelompok');
 
