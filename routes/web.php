@@ -33,6 +33,9 @@ Route::get('/profil', function(){
 //Route::post('/login', 'UserController@login')->name('user.login');
 
 // Register
+
+// Route::post('/register', 'UserController@registerUser')->name('user.register');
+
 Route::post('/registeruser', 'UserController@registerUser')->name('user.register');
 
 Route::post('/biodata', 'DosenController@setBiodata')->name('biodata.set');
@@ -42,7 +45,7 @@ Route::post('/tambahKelompok', 'KelompokController@tambahKelompok')->name('tamba
 // Route::get('/detaildatakelompok', function(){
 //   return view('dashboard/detaildatakelompok');
 // });
-Route::get('/detaildatakelompok/{id}', 'KelompokController@detailDataKelompok')->name('detaildatakelompok');
+Route::get('/detaildatakelompok', 'KelompokController@detailDataKelompok')->name('detailDataKelompok');
 
 Route::get('/daftarbimbingan', function(){
   return view('dashboard/daftarbimbingan');
@@ -51,13 +54,19 @@ Route::get('/daftarbimbingan', function(){
 // Route::get('/datakelompok', function(){
 //   return view('dashboard/datakelompok');
 // });
-Route::get('/datakelompok', 'KelompokController@dataKelompok');
+//Route::get('/datakelompok', 'KelompokController@dataKelompok');
 
-// Route::get('/register', function(){
-//   return view('auth/register');
-// });
+Route::get('/register', function(){
+  return view('auth/register');
+});
 
+// Login
+//Route::post('/login', 'UserController@login')->name('user.login');
 
+// Register
+Route::post('/register', 'UserController@registerUser')->name('user.register');
+
+Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
 Auth::routes();
 

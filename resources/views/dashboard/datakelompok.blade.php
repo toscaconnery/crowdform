@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-md-12">
             <!-- TABLE STRIPED -->
-        @if($jumlahTim == 0)
+        @if($punyaKelompok == 0)
         <div class="panel">
           <div class="panel-heading">
             <h3 class="panel-title">Anda Belum Punya Kelompok</h3>
@@ -36,7 +36,6 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>No</th>
                   <th>Nama Kelompok</th>
                   <th>Jumlah Anggota</th>
                   <th>Aksi</th>
@@ -46,14 +45,13 @@
                 $x = 1;
               @endphp
               <tbody>
-                @foreach($listTim as $list)
                 <tr>
                   <td>{{$x++}}</td>
-                  <td>{{$list->team_name}}</td>
-                  <td>{{$list->jumlah}}</td>
-                  <td><button type="button" class="btn btn-info" name="button">Detail Kelompok</button></td>
+                  {{dd($kelompok)}}
+                  <td>{{$kelompok->team_name}}</td>
+                  <td>{{$kelompok->jumlah}}</td>
+                  <td><a href="{{route('detaildatakelompok')}}"><button type="button" class="btn btn-info" name="button">Detail Kelompok</button></a></td>
                 </tr>
-                @endforeach
               </tbody>
             </table>
           </div>

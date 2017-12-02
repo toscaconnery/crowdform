@@ -10,25 +10,25 @@ use App\Team;
 use App\UserTeam;
 class KelompokController extends Controller
 {
-    public function dataKelompok(){
-    	if (Auth::check()) {
-    		$user = Auth::user();
-    		$user_id = $user->user_id;
-    		$this->data['jumlahTim'] = DB::table('user_team')->where('user_id', $user_id)->count();
+    // public function dataKelompok(){
+    // 	if (Auth::check()) {
+    // 		$user = Auth::user();
+    // 		$user_id = $user->user_id;
+    // 		$this->data['punyaKelompok'] = DB::table('user_team')->where('user_id', $user_id)->count();
 
-    		if($this->data['jumlahTim'] > 0) {
-    			//$this->data['listTim'] = DB::table('user_team')->where('user_id', $user_id)->get();
-    			$this->data['listTim'] = DB::select('SELECT t.team_name, COUNT(u.id) AS jumlah
-    												FROM user_team u, team t
-    												WHERE t.team_id = u.team_id
-    												GROUP BY t.team_name');
-    		}
-    		$this->data['jenisPaket'] = DB::table('package')->get();
+    // 		if($this->data['punyaKelompok'] > 0) {
+    // 			$kelompok = DB::select('SELECT t.team_name, COUNT(u.id) AS jumlah
+    // 												FROM user_team u, team t
+    // 												WHERE t.team_id = u.team_id
+    // 												GROUP BY t.team_name')->first();
+    // 			$this->data['kelompok'] = $kelompok[0];
+    // 		}
+    // 		$this->data['jenisPaket'] = DB::table('package')->get();
 
-    		return view('dashboard.datakelompok', $this->data);
-    	}
-    	dd("belum login");
-    }
+    // 		return view('dashboard.datakelompok', $this->data);
+    // 	}
+    // 	dd("belum login");
+    // }
 
     public function tambahKelompok(Request $request) {
     	if (Auth::check()) {
@@ -53,12 +53,24 @@ class KelompokController extends Controller
     	}
     }
 
-    public function detailDataKelompok($id_kelompok) {
+    public function detailDataKelompok() {
     	if (Auth::check()) {
-    		$permission = DB::table('user_team')
-    						->where('team_id', $id_kelompok)
-    						->where('user_id', Auth::user()->user_id)
-    						->count();
+    		if (Auth::user()->team_id == NULL) {
+    			$this->data['punyaKelompok'] = 0;
+    		}
+    		else {
+    			$this->data['punyaKelompok'] = 1;
+    		}
+
+    		if($this->data['punyaKelompok'] == 1) {
+    			$this->data['kelompok'] = DB::table('team')->where('team_id', $id_kelompok)->get()->first();
+    			$this->data['punyaIde'] = DB::table('idea')->where('team_id', $id_kelompok)->count();
+    		}
+
+    		// $permission = DB::table('user_team')
+    		// 				->where('team_id', $id_kelompok)
+    		// 				->where('user_id', Auth::user()->user_id)
+    		// 				->count();
     		if ($permission) {
     			$this->data['kelompok'] = DB::table('team')->where('team_id', $id_kelompok)->get()->first();
     			$this->data['punyaIde'] = DB::table('idea')->where('team_id', $id_kelompok)->count();
