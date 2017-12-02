@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/idebisnis', function(){
   return view('dashboard/idebisnis');
 });
+Route::post('tambahkanidebisnis', 'IdeController@tambahkanIde');
 
 Route::get('/daftarmentor', function(){
   return view('dashboard/daftarmentor');
@@ -28,7 +29,7 @@ Route::get('/daftarmentor', function(){
 //Route::post('/login', 'UserController@login')->name('user.login');
 
 // Register
-Route::post('/register', 'UserController@registerUser')->name('user.register');
+// Route::post('/register', 'UserController@registerUser')->name('user.register');
 
 Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
