@@ -52,4 +52,24 @@ class KelompokController extends Controller
     		}
     	}
     }
+
+    public function detailDataKelompok($id_kelompok) {
+    	if (Auth::check()) {
+    		$permission = DB::table('user_team')
+    						->where('team_id', $id_kelompok)
+    						->where('user_id', Auth::user()->user_id)
+    						->count();
+    		if ($permission) {
+    			$this->data['kelompok'] = DB::table('team')->where('team_id', $id_kelompok)->get()->first();
+    			$this->data['punyaIde'] = DB::table('idea')->where('team_id', $id_kelompok)->count();
+    			if($this->data['punyaIde'] > 0) {
+    				$this->data['ideKelompok'] = DB::table('idea')->where('team_id', $id_kelompok)->get()->first();
+    			}
+    			return view('dashboard.detaildatakelompok',$this->data);
+    		}
+    		else {
+    			dd("Anda tidak termasuk dalam kelompok");
+    		}
+    	}
+    }
 }

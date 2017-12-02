@@ -39,9 +39,10 @@ Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
 Route::post('/tambahKelompok', 'KelompokController@tambahKelompok')->name('tambahKelompok');
 
-Route::get('/detaildatakelompok', function(){
-  return view('dashboard/detaildatakelompok');
-});
+// Route::get('/detaildatakelompok', function(){
+//   return view('dashboard/detaildatakelompok');
+// });
+Route::get('/detaildatakelompok/{id}', 'KelompokController@detailDataKelompok')->name('detaildatakelompok');
 
 Route::get('/daftarbimbingan', function(){
   return view('dashboard/daftarbimbingan');

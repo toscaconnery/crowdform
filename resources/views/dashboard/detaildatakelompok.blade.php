@@ -8,6 +8,7 @@
 <div class="main">
   <!-- MAIN CONTENT -->
   <div class="main-content">
+   
   		<div class="container-fluid">
   			<h3 class="page-title">Detail Data Kelompok</h3>
         <div class="row">
@@ -20,13 +21,20 @@
 							<!-- PANEL HEADLINE -->
 							<div class="panel panel-headline">
 								<div class="panel-heading">
-									<h3 class="panel-title">Nama Kelompok</h3>
+									<h1 class="panel-title">{{$kelompok->team_name}}</h1>
 									<p class="panel-subtitle">Deskripsi Singkat Kelompok</p>
 								</div>
+                @if($punyaIde)
+                <div class="panel-body">
+                  <h4>Deskripsi Kelompok</h4>
+                  <p>Anda Belum mempunyai deskripsi kelompok</p>
+                </div>
+                @else
 								<div class="panel-body">
 									<h4>Deskripsi Bisnis Kelompok</h4>
 									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
 								</div>
+                @endif
 							</div>
 							<!-- END PANEL HEADLINE -->
 						</div>

@@ -11,6 +11,6 @@ class Idea extends Model
     protected $primaryKey = 'idea_id';
     public $incrementing = true;
     public $timestamps = true;
-    protected $fillable = ['idea_name', 'idea_description', 'category_id', 'idea_photo'];
+    protected $fillable = ['idea_name', 'idea_description', 'team_id', 'category_id', 'idea_photo'];
 }
  
