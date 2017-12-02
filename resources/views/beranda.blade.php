@@ -199,8 +199,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <form method="post" action= "{{ route('userregister') }}">
-          <!-- {{ csrf_field() }} -->
+          <form method="POST" action="{{route('user.register')}}" enctype="multipart/form-data">
+          {{ csrf_field() }}
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">Nama Depan</label>
               <div class="col-sm-8">
@@ -228,7 +228,7 @@
             <div class="form-group row">
               <label  class="col-sm-4 col-form-label">Tipe</label>
               <div class="col-sm-8">
-                <select class="custom-select" name="tipe">
+                <select class="custom-select" name="type_id">
                   <option value="1">Mentor</option>
                   <option value="2">Mahasiswa</option>
                   <!-- <option value="investor">Investor</option> -->
@@ -242,12 +242,6 @@
               </div>
             </div>
             <div class="form-group row">
-              <label  class="col-sm-4 col-form-label">Konfirmasi Password</label>
-              <div class="col-sm-8">
-                <input type="password" class="form-control" name="password2" placeholder="Masukkan Password...">
-              </div>
-            </div>
-            <div class="form-group row">
               <label  class="col-sm-4 col-form-label">Upload Foto Profil</label>
               <div class="col-sm-8">
                 <input type="file" class="form-control" name="user_photo" >
@@ -255,7 +249,7 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success">Register</button>
+          <button type="submit" class="btn btn-success">Register</button>
            </form>
         </div>
       </div>

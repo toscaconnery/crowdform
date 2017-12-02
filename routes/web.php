@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('beranda');
-});
+})->name('home');
 
 Route::get('/idebisnis', function(){
   return view('dashboard/idebisnis');
@@ -33,9 +33,9 @@ Route::get('/profil', function(){
 //Route::post('/login', 'UserController@login')->name('user.login');
 
 // Register
-Route::post('/register', 'UserController@registerUser')->name('userregister');
+Route::post('/registeruser', 'UserController@registerUser')->name('user.register');
 
-Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
+// Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
 Route::post('/tambahKelompok', 'KelompokController@tambahKelompok')->name('tambahKelompok');
 
