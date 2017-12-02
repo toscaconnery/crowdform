@@ -27,8 +27,12 @@ Route::get('/daftarmentor', function(){
 Route::post('/login', 'UserController@login')->name('user.login');
 
 // Register
-Route::post('/register', 'UserCOntroller@registerUser')->name('user.register');
+Route::post('/register', 'UserController@registerUser')->name('user.register');
 
 Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
