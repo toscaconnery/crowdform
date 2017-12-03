@@ -23,7 +23,15 @@
                 	<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 	</form>
+                @else
+                	<div class="navbar-btn navbar-btn-right">
+						<a class="btn btn-danger update-pro nav-link">
+                             <i class="lnr lnr-exit"></i>
+                             <span>Login</span>
+                        </a>
+					</div>
 				@endif
+				@if(Auth::check())
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
@@ -78,6 +86,7 @@
 						</li> -->
 					</ul>
 				</div>
+				@endif
 			</div>
 		</nav>
 		<!-- END NAVBAR -->

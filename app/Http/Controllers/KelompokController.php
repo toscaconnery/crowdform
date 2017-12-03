@@ -76,11 +76,7 @@ class KelompokController extends Controller
     		$this->data['jenisPaket'] = DB::table('package')->get();
     		$this->data['jenisKategori'] = DB::table('category')->get();
     		$this->data['notifikasi'] = $this->cekNotifikasi();
-    		$tempnotifikasi = $this->data['notifikasi'];
-    		$this->data['jumlahNotifikasi'] = 0;
-    		foreach($tempnotifikasi as $data) {
-    			$this->data['jumlahNotifikasi']++;
-    		}
+    		$this->data['jumlahNotifikasi'] = $this->cekJumlahNotifikasi($this->data['notifikasi']);
 
     		return view('dashboard.detaildatakelompok', $this->data);
     	}
@@ -97,28 +93,6 @@ class KelompokController extends Controller
     	$invitation->status = "Belum dikonfirmasi"; 	
     	$invitation->save();
     	return back();
-    }
-
-    public function cekNotifikasi() {
-    	$notifikasi = Array();
-    	$x = 0;
-
-    	//cek invitation
-    	$invitation = DB::table('invitation')
-    					->where('user_id', Auth::user()->user_id)
-    					->where('status', 'Belum dikonfirmasi')
-    					->get()
-    					->first();
-    	if($invitation != NULL) {
-    		$tim = DB::table('team')->where('team_id', $invitation->team_id)->get()->first();
-    		$notifikasi[$x] = array();
-    		$notifikasi[$x][0] = "invitation";
-    		$notifikasi[$x][1] = $tim->team_name;
-    		$notifikasi[$x][2] = $invitation->team_id;
-    		$x++;	
-    	}
-    	
-    	return $notifikasi;
     }
 
     public function masukKelompok($id_kelompok) {

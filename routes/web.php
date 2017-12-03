@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('beranda');
 })->name('home');
 
-Route::get('/idebisnis', function(){
-  return view('dashboard/idebisnis');
-});
+// Route::get('/idebisnis', function(){
+//   return view('dashboard/idebisnis');
+// });
+Route::get('/idebisnis', 'IdeController@ideBisnis')->name('ideBisnis');
 
 Route::post('/tambahidebisnis', 'IdeController@tambahIdeBisnis')->name('tambahIdeBisnis');
 

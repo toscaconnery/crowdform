@@ -11,60 +11,26 @@
   		<div class="container-fluid">
   			<h3 class="page-title">Ide Bisnis</h3>
   		    <div class="row">
-            <div class="col-md-4">
-              <!-- PANEL WITH FOOTER -->
-              <div class="panel">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Judul Ide bisnis</h3>
-                  <div class="right">
-                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+            @foreach($listIde as $ide)
+              <div class="col-md-4">
+                <!-- PANEL WITH FOOTER -->
+                <div class="panel">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">{{$ide->idea_name}}</h3>
+                    <div class="right">
+                      <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <p>{{$ide->idea_description}}</p>
+                  </div>
+                  <div class="panel-footer">
+                    <h5>{{$ide->team_name}}</h5>
                   </div>
                 </div>
-                <div class="panel-body">
-                  <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-                </div>
-                <div class="panel-footer">
-                  <h5>Nama Tim</h5>
-                </div>
+                <!-- END PANEL WITH FOOTER -->
               </div>
-              <!-- END PANEL WITH FOOTER -->
-            </div>
-            <div class="col-md-4">
-              <!-- PANEL WITH FOOTER -->
-              <div class="panel">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Judul Ide bisnis</h3>
-                  <div class="right">
-                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-                  </div>
-                </div>
-                <div class="panel-body">
-                  <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-                </div>
-                <div class="panel-footer">
-                  <h5>Nama Tim</h5>
-                </div>
-              </div>
-              <!-- END PANEL WITH FOOTER -->
-            </div>
-            <div class="col-md-4">
-              <!-- PANEL WITH FOOTER -->
-              <div class="panel">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Judul Ide bisnis</h3>
-                  <div class="right">
-                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-                  </div>
-                </div>
-                <div class="panel-body">
-                  <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-                </div>
-                <div class="panel-footer">
-                  <h5>Nama Tim</h5>
-                </div>
-              </div>
-              <!-- END PANEL WITH FOOTER -->
-            </div>
+            @endforeach
           </div>
         </div>
       </div>

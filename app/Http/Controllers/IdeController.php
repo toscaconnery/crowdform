@@ -49,4 +49,17 @@ class IdeController extends Controller
     		return back();
     	}
     }
+
+    public function ideBisnis() {
+    	if(Auth::check()) {
+    		$this->data['notifikasi'] = $this->cekNotifikasi();
+    		$this->data['jumlahNotifikasi'] = $this->cekJumlahNotifikasi($this->data['notifikasi']);
+    	}
+    	$this->data['listIde'] = DB::select('SELECT t.team_name, i.*
+    											FROM idea i, team t
+    											WHERE t.team_id = i.team_id');
+    	return view('dashboard.idebisnis', $this->data);
+    }
+
+
 }
