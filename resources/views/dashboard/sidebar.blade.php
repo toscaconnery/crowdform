@@ -11,7 +11,7 @@
 				</div>
 				@if(Auth::check())
 					<div class="navbar-btn navbar-btn-right">
-						<a class="btn btn-danger update-pro nav-link" href="{{ route('logout') }}" 
+						<a class="btn btn-danger update-pro nav-link" href="{{ route('logout') }}"
 							onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();" >
                              <i class="lnr lnr-exit"></i>
@@ -25,7 +25,7 @@
                 	</form>
                 @else
                 	<div class="navbar-btn navbar-btn-right">
-						<a class="btn btn-danger update-pro nav-link">
+						<a class="btn btn-danger update-pro nav-link" data-toggle="modal" data-target="#LoginModal">
                              <i class="lnr lnr-exit"></i>
                              <span>Login</span>
                         </a>
@@ -118,3 +118,37 @@
 			</div>
 		</div>
 		<!-- END LEFT SIDEBAR -->
+		<!-- Modal Login -->
+		<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <form method="POST" action="{{route('login')}}">
+		        <div class="modal-body">
+		          <div class="form-group row">
+		            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+		            <div class="col-sm-10">
+		              <input type="email" class="form-control" name="email" placeholder="Email">
+		              {{ csrf_field() }}
+		            </div>
+		          </div>
+		          <div class="form-group row">
+		            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+		            <div class="col-sm-10">
+		              <input type="password" class="form-control" name="password" placeholder="Password">
+		            </div>
+		          </div>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="submit" class="btn btn-success">Login</button>
+		        </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
+		  <!-- /Modal login-->
