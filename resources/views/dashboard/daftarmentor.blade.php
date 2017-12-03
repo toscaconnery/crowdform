@@ -26,10 +26,12 @@
                   </div>
                 </div>
                 <div class="panel-body">
-                  <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
+                	<img src="{{URL('')}}/dashboard/img/user-medium.png" class="img-circle" style="margin-left:6em" alt="Avatar">
+                  <p style="text-align:center">Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
                   <h5>Rating Mentor</h5>
+                  <button type="button" class="btn btn-primary" name="button">Pilih Mentor</button>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
@@ -44,10 +46,12 @@
                   </div>
                 </div>
                 <div class="panel-body">
-                  <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
+                	<img src="{{URL('')}}/dashboard/img/user-medium.png" class="img-circle" style="margin-left:6em" alt="Avatar">
+                  <p style="text-align:center">Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
                   <h5>Rating Mentor</h5>
+                  <button type="button" class="btn btn-primary" name="button">Pilih Mentor</button>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->
@@ -62,10 +66,12 @@
                   </div>
                 </div>
                 <div class="panel-body">
-                  <p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
+                	<img src="{{URL('')}}/dashboard/img/user-medium.png" class="img-circle" style="margin-left:6em" alt="Avatar">
+                  <p style="text-align:center">Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
                 </div>
                 <div class="panel-footer">
                   <h5>Rating Mentor</h5>
+                  <button type="button" class="btn btn-primary" name="button">Pilih Mentor</button>
                 </div>
               </div>
               <!-- END PANEL WITH FOOTER -->

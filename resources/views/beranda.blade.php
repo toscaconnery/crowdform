@@ -44,26 +44,6 @@
           <h1>CrowdForm</h1>
           <h3>Connecting People</h3>
           <hr class="intro-divider">
-          <ul class="list-inline intro-social-buttons">
-            <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-twitter fa-fw"></i>
-                <span class="network-name">Twitter</span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-facebook fa-fw"></i>
-                <span class="network-name">Facebook</span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
-                <i class="fa fa-linkedin fa-fw"></i>
-                <span class="network-name">Linkedin</span>
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </header>
@@ -120,7 +100,7 @@
       <!-- /.container -->
     </section>
     <!-- /.content-section-a -->
-    <aside class="banner">
+    <!-- <aside class="banner">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 my-auto">
@@ -151,7 +131,7 @@
         </div>
       </div>
       <!-- /.container -->
-    </aside>
+    <!-- </aside>  -->
     <!-- /.banner -->
 <!-- Modal Login -->
 <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

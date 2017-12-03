@@ -28,6 +28,10 @@ Route::get('/daftarmentor', function(){
   return view('dashboard/daftarmentor');
 });
 
+Route::get('/statistik', function(){
+  return view('dashboard/statistik');
+});
+
 Route::get('/profil', function(){
   return view('dashboard/profil');
 });
