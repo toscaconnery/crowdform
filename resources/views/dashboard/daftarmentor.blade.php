@@ -16,66 +16,34 @@
           </div>
         </div><br>
   		    <div class="row">
-            <div class="col-md-4">
-              <!-- PANEL WITH FOOTER -->
-              <div class="panel">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Nama Mentor</h3>
-                  <div class="right">
-                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+            @foreach($listMentor as $mentor)
+              <div class="col-md-4">
+                <!-- PANEL WITH FOOTER -->
+                <div class="panel">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">{{$mentor->first_name}}{{" "}}{{$mentor->last_name}}</h3>
+                    <div class="right">
+                      <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    @if(isset($mentor->user_photo))
+                  	 <img src="{{URL('')}}/{{$mentor->user_photo}}" width="100" height="100" class="img-circle" style="margin-left:6em" alt="Avatar">
+                    @else
+                      <img src="{{URL('')}}/img/no_profpic.png" width="100" height="100" class="img-circle" style="margin-left:6em" alt="Avatar">
+                    @endif
+                    <p style="text-align:center">Speciality:{{$mentor->specialities}}</p>
+                  </div>
+                  <div class="panel-footer">
+                    <a href="{{URL('')}}/pilihmentortim/{{$mentor->user_id}}">
+                      <button type="button" class="btn btn-primary" name="button">Pilih Mentor</button>
+                    </a>
                   </div>
                 </div>
-                <div class="panel-body">
-                	<img src="{{URL('')}}/dashboard/img/user-medium.png" class="img-circle" style="margin-left:6em" alt="Avatar">
-                  <p style="text-align:center">Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-                </div>
-                <div class="panel-footer">
-                  <h5>Rating Mentor</h5>
-                  <button type="button" class="btn btn-primary" name="button">Pilih Mentor</button>
-                </div>
+                <!-- END PANEL WITH FOOTER -->
               </div>
-              <!-- END PANEL WITH FOOTER -->
-            </div>
-            <div class="col-md-4">
-              <!-- PANEL WITH FOOTER -->
-              <div class="panel">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Nama Mentor</h3>
-                  <div class="right">
-                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-                  </div>
-                </div>
-                <div class="panel-body">
-                	<img src="{{URL('')}}/dashboard/img/user-medium.png" class="img-circle" style="margin-left:6em" alt="Avatar">
-                  <p style="text-align:center">Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-                </div>
-                <div class="panel-footer">
-                  <h5>Rating Mentor</h5>
-                  <button type="button" class="btn btn-primary" name="button">Pilih Mentor</button>
-                </div>
-              </div>
-              <!-- END PANEL WITH FOOTER -->
-            </div>
-            <div class="col-md-4">
-              <!-- PANEL WITH FOOTER -->
-              <div class="panel">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Nama Mentor</h3>
-                  <div class="right">
-                    <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-                  </div>
-                </div>
-                <div class="panel-body">
-                	<img src="{{URL('')}}/dashboard/img/user-medium.png" class="img-circle" style="margin-left:6em" alt="Avatar">
-                  <p style="text-align:center">Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-                </div>
-                <div class="panel-footer">
-                  <h5>Rating Mentor</h5>
-                  <button type="button" class="btn btn-primary" name="button">Pilih Mentor</button>
-                </div>
-              </div>
-              <!-- END PANEL WITH FOOTER -->
-            </div>
+            @endforeach
+
           </div>
         </div>
       </div>
@@ -107,15 +75,10 @@
                   <input type="number" class="form-control" name="hp" placeholder="Masukkan No.hp...">
                 </div>
               </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-              </div>
           </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Submit</button>
       </div>
     </div>
   </div>

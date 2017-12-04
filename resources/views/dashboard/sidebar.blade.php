@@ -15,7 +15,7 @@
 							onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();" >
                              <i class="lnr lnr-exit"></i>
-                             <span>Logout</span>
+                             <span>Keluar</span>
                         </a>
 					</div>
 
@@ -27,13 +27,16 @@
                 	<div class="navbar-btn navbar-btn-right">
 						<a class="btn btn-danger update-pro nav-link" data-toggle="modal" data-target="#LoginModal">
                              <i class="lnr lnr-exit"></i>
-                             <span>Login</span>
+                             <span>Masuk</span>
                         </a>
 					</div>
 				@endif
 				@if(Auth::check())
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a class="update-pro" title="Kirim Pesan" data-toggle="modal" data-target="#ChatModal"><i class="lnr lnr-bubble"></i><span>Kirim Pesan</span></a>
+						</li>
 						<li class="dropdown">
 								@if(!isset($notifikasi))
 									@php
@@ -49,22 +52,16 @@
 								@endif
 							</a>
 							<ul class="dropdown-menu notifications">
-{{-- 								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
-								<li><a href="#" class="more">See all notifications</a></li> --}}
 								@if($jumlahNotifikasi > 0)
 									@foreach($notifikasi as $notifikasi)
-										<li>
+										<li style="text-center">
 											<a href="#" class="notification-item">
 												<span class="dot bg-success">
 												</span>
 												@if($notifikasi[0] == "invitation")
 													Anda diundang ke tim {{$notifikasi[1]}}.
-													<a href="{{URL('')}}/masukKelompok/{{$notifikasi[2]}}"><button class="btn btn-success">terima</button></a>
-													<a href="{{URL('')}}/abaikanKelompok/{{$notifikasi[2]}}"><button class="btn btn-danger">abaikan</button></a>
+													<a href="{{URL('')}}/masukKelompok/{{$notifikasi[2]}}"><button class="btn btn-success">Terima</button></a>
+													<a href="{{URL('')}}/abaikanKelompok/{{$notifikasi[2]}}"><button class="btn btn-danger">Abaikan</button></a>
 												@endif
 											</a>
 										</li>
@@ -77,13 +74,10 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{URL('')}}/dashboard/img/user.png" class="img-circle" alt="Avatar"> <span>{{Auth::user()->first_name}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="{{URL('/profil')}}"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-								<li><a href="{{URL('/setting')}}"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
+								<li><a href="{{URL('/profil')}}"><i class="lnr lnr-user"></i> <span>Profil</span></a></li>
+								<li><a href="{{URL('/setting')}}"><i class="lnr lnr-cog"></i> <span>Pengaturan</span></a></li>
 							</ul>
 						</li>
-						<!-- <li>
-							<a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-						</li> -->
 					</ul>
 				</div>
 				@endif
@@ -95,7 +89,7 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="{{URL('dashboardhome')}}" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="{{URL('dashboardhome')}}" class="active"><i class="lnr lnr-home"></i> <span>Beranda</span></a></li>
 						<li><a href="{{URL('idebisnis')}}" class=""><i class="lnr lnr-rocket"></i> <span>Ide Bisnis</span></a></li>
 						<li><a href="{{URL('daftarmentor')}}" class=""><i class="lnr lnr-user"></i> <span>Daftar Mentor</span></a></li>
 						<li><a href="{{URL('daftarbimbingan')}}" class=""><i class="lnr lnr-calendar-full"></i> <span>Riwayat Mentoring</span></a></li>
@@ -124,7 +118,7 @@
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+		        <h5 class="modal-title" id="exampleModalLabel">Masuk</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
@@ -139,17 +133,56 @@
 		            </div>
 		          </div>
 		          <div class="form-group row">
-		            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+		            <label for="inputPassword3" class="col-sm-2 col-form-label">Kata Sandi</label>
 		            <div class="col-sm-10">
-		              <input type="password" class="form-control" name="password" placeholder="Password">
+		              <input type="password" class="form-control" name="password" placeholder="Kata Sandi">
 		            </div>
 		          </div>
 		        </div>
 		        <div class="modal-footer">
-		          <button type="submit" class="btn btn-success">Login</button>
+		          <button type="submit" class="btn btn-success">Masuk</button>
 		        </div>
 		      </form>
 		    </div>
 		  </div>
 		</div>
 		  <!-- /Modal login-->
+
+			<!-- Modal Chat -->
+			<div id="ChatModal" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Chat</h4>
+			      </div>
+			      <div class="modal-body">
+			          <form class="form-horizontal" action="" method="post">
+			              <div class="form-group">
+			                <label class="control-label col-sm-2">Penerima</label>
+			                <div class="col-sm-10">
+			                  <input type="text" class="form-control" name="penerima" placeholder="Masukkan Penerima">
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label class="control-label col-sm-2">Judul</label>
+			                <div class="col-sm-10">
+			                  <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul">
+			                </div>
+			              </div>
+										<div class="form-group">
+											<label class="control-label col-sm-2">Judul</label>
+											<div class="col-sm-10">
+												<textarea class="form-control" name="pesan" placeholder="Masukkan Pesan"></textarea>
+											</div>
+										</div>
+			          </form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="submit" class="btn btn-success">Submit</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
