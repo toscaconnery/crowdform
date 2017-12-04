@@ -44,6 +44,10 @@ Route::get('/setting', function(){
   return view('dashboard/setting');
 });
 
+Route::get('/kotakmasuk', function(){
+  return view('dashboard/kotakmasuk');
+});
+
 
 // Login
 //Route::post('/login', 'UserController@login')->name('user.login');
