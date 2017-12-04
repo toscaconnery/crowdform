@@ -120,4 +120,17 @@ class KelompokController extends Controller
     	$invitation->save();
     	return back();
     }
+
+    public function pilihMentor(Request $request) {
+        if (Auth::check()) {
+            $user = Auth::user();
+            if(isset($user->team_id)) {
+                dd("punya tim");
+            }
+            else {
+                dd("nggak punya tim");
+            }
+        }
+    }
+
 }

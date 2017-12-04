@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('beranda');
 })->name('home');
 
+Route::get('dashboardhome', 'DashboardController@dashboardHome');
+
 // Route::get('/idebisnis', function(){
 //   return view('dashboard/idebisnis');
 // });
@@ -87,3 +89,5 @@ Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/pilihmentor/{id}', 'KelompokController@pilihMentor');

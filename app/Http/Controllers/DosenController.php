@@ -38,6 +38,8 @@ class DosenController extends Controller
     				->where('user.type_id', '=', 1)
     				->get();
 
+        return $dosen;
+
     }
 
     public function getDosenDetail(Request $request){

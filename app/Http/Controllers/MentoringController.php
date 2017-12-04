@@ -27,4 +27,5 @@ class MentoringController extends Controller
     		$team = DB::table('team')->where('team_id', '=', $request->team_id)->increment('mentoring_count');
     	}
     }
+
 }
