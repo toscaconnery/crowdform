@@ -98,3 +98,5 @@ Route::get('/pilihmentor/{id}', 'KelompokController@pilihMentor');
 // Form Mentoring
 Route::post('/setmentoring', 'MentoringController@setMentoring')->name('setmentoring');
 
+Route::post('/kirimpesan', 'MessageController@kirimPesan')->name('kirimPesan');
+

@@ -158,31 +158,33 @@
 			        <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        <h4 class="modal-title">Chat</h4>
 			      </div>
+			      <form class="form-horizontal" action="{{ route('kirimPesan') }}" method="post">
 			      <div class="modal-body">
-			          <form class="form-horizontal" action="" method="post">
-			              <div class="form-group">
-			                <label class="control-label col-sm-2">Penerima</label>
-			                <div class="col-sm-10">
-			                  <input type="text" class="form-control" name="penerima" placeholder="Masukkan Penerima">
-			                </div>
-			              </div>
-			              <div class="form-group">
-			                <label class="control-label col-sm-2">Judul</label>
-			                <div class="col-sm-10">
-			                  <input type="text" class="form-control" name="judul" placeholder="Masukkan Judul">
-			                </div>
-			              </div>
-										<div class="form-group">
-											<label class="control-label col-sm-2">Judul</label>
-											<div class="col-sm-10">
-												<textarea class="form-control" name="pesan" placeholder="Masukkan Pesan"></textarea>
-											</div>
-										</div>
-			          </form>
+			      		{{ csrf_field() }}
+			      		<div class="form-group">
+			      			<label class="control-label col-sm-2">Penerima</label>
+			      			<div class="col-sm-10">
+			      				<input {{Auth::user()->type_id == 2 ? "Disabled" : ""}} type="text" class="form-control" placeholder="{{Auth::user()->type_id == 1 ? "Masukkan nama tim" : ""}}" name="destination" value="{{Auth::user()->type_id == 2 ? "Mentor" : ""}}">
+			      			</div>
+			      		</div>
+			      		<div class="form-group">
+			      			<label class="control-label col-sm-2">Subjek</label>
+			      			<div class="col-sm-10">
+			      				<input type="text" class="form-control" name="subject" placeholder="Apa yang ingin Anda bahas?">
+			      			</div>
+			      		</div>
+			      		<div class="form-group">
+			      			<label class="control-label col-sm-2">Pesan</label>
+			      			<div class="col-sm-10">
+			      				<textarea class="form-control" name="message" placeholder=""></textarea>
+			      			</div>
+			      		</div>
+			      	
 			      </div>
 			      <div class="modal-footer">
 			        <button type="submit" class="btn btn-success">Submit</button>
 			      </div>
+			      </form>
 			    </div>
 			  </div>
 			</div>
