@@ -91,7 +91,7 @@
 					<ul class="nav">
 						<li><a href="{{URL('dashboardhome')}}" class="active"><i class="lnr lnr-home"></i> <span>Beranda</span></a></li>
 						<li><a href="{{URL('idebisnis')}}" class=""><i class="lnr lnr-rocket"></i> <span>Ide Bisnis</span></a></li>
-						<li><a href="{{URL('daftarmentor')}}" class=""><i class="lnr lnr-user"></i> <span>Daftar Mentor</span></a></li>
+						<li><a href="{{URL('listmentor')}}" class=""><i class="lnr lnr-user"></i> <span>Daftar Mentor</span></a></li>
 						<li><a href="{{Route('getmentoring')}}" class=""><i class="lnr lnr-calendar-full"></i> <span>Riwayat Mentoring</span></a></li>
 						
 						@if(Auth::user()->type_id == 2)
