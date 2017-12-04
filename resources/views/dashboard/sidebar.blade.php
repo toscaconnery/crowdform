@@ -72,7 +72,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{URL('')}}/dashboard/img/user.png" class="img-circle" alt="Avatar"> <span>{{Auth::user()->first_name}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{URL('')}}/{{Auth::user()->user_photo}}" class="img-circle" alt="Avatar"> <span>{{Auth::user()->first_name}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="{{URL('/profil')}}"><i class="lnr lnr-user"></i> <span>Profil</span></a></li>
 								<li><a href="{{URL('/setting')}}"><i class="lnr lnr-cog"></i> <span>Pengaturan</span></a></li>

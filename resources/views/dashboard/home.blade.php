@@ -9,13 +9,13 @@
   <!-- MAIN CONTENT -->
   <div class="main-content">
   		<div class="container-fluid">
-  			<h3 class="page-title">Selamat Datang Nama orang</h3>
+  			<h3 class="page-title">Selamat Datang {{Auth::user()->first_name}}</h3>
   		    <div class="row">
               <div class="col-md-12">
                 <!-- PANEL WITH FOOTER -->
                 <div class="panel">
                   <div class="panel-heading">
-                    <h3 class="panel-title">CrowdForm Platform | Anda memiliki akses sebagai (mentor/mahasiswa)</h3>
+                    <h3 class="panel-title">CrowdForm Platform | Anda memiliki akses sebagai {{$tipeUser->name}}</h3>
                     <div class="right">
                       <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                     </div>
