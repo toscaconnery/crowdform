@@ -95,6 +95,7 @@
 						<li><a href="{{URL('daftarbimbingan')}}" class=""><i class="lnr lnr-calendar-full"></i> <span>Riwayat Mentoring</span></a></li>
 						<li><a href="{{URL('detaildatakelompok')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
 						<li><a href="{{URL('statistik')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Statistik Mentoring</span></a></li>
+						<li><a href="{{URL('kotakmasuk')}}" class=""><i class="lnr lnr-envelope"></i> <span>Kotak Masuk</span></a></li>
 						<!-- <li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
@@ -156,7 +157,7 @@
 			    <div class="modal-content">
 			      <div class="modal-header">
 			        <button type="button" class="close" data-dismiss="modal">&times;</button>
-			        <h4 class="modal-title">Chat</h4>
+			        <h4 class="modal-title">Kirim Pesan</h4>
 			      </div>
 			      <form class="form-horizontal" action="{{ route('kirimPesan') }}" method="post">
 			      <div class="modal-body">
@@ -179,10 +180,10 @@
 			      				<textarea class="form-control" name="message" placeholder=""></textarea>
 			      			</div>
 			      		</div>
-			      	
+
 			      </div>
 			      <div class="modal-footer">
-			        <button type="submit" class="btn btn-success">Submit</button>
+			        <button type="submit" class="btn btn-success">Kirim</button>
 			      </div>
 			      </form>
 			    </div>

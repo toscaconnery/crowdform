@@ -44,6 +44,10 @@ Route::get('/setting', function(){
   return view('dashboard/setting');
 });
 
+Route::get('/kotakmasuk', function(){
+  return view('dashboard/kotakmasuk');
+});
+
 
 // Login
 //Route::post('/login', 'UserController@login')->name('user.login');
@@ -99,4 +103,3 @@ Route::get('/pilihmentor/{id}', 'KelompokController@pilihMentor');
 Route::post('/setmentoring', 'MentoringController@setMentoring')->name('setmentoring');
 
 Route::post('/kirimpesan', 'MessageController@kirimPesan')->name('kirimPesan');
-

@@ -8,7 +8,7 @@
 <div class="main">
   <!-- MAIN CONTENT -->
   <div class="main-content">
-   
+
   		<div class="container-fluid">
   			<h3 class="page-title">Detail Data Kelompok</h3>
           <div class="row">
@@ -23,7 +23,7 @@
                 <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modalRiwayatMentoring">Tambahkan Riwayat Mentoring</button>
               @endif
             </div>
-          </div>    
+          </div>
         <br>
           <div class="row">
 
@@ -115,20 +115,20 @@
         <form class="form-horizontal" action="{{route('buatKelompok')}}" method="post">
           <div class="form-group">
             {{ csrf_field() }}
-            <label class="control-label col-sm-2">Nama Kelompok</label>
-            <div class="col-sm-10">
+            <label class="control-label col-sm-4">Nama Kelompok</label>
+            <div class="col-sm-8">
               <input type="text" class="form-control" name="team_name" placeholder="Nama Kelompok Anda...">
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2">Deskripsi</label>
-            <div class="col-sm-10">
+            <label class="control-label col-sm-4">Deskripsi</label>
+            <div class="col-sm-8">
               <textarea class="form-control" name="description" placeholder="Masukkan Deskripsi Kelompok Anda..."></textarea>
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2">Pilihan Paket</label>
-            <div class="col-sm-10">
+            <label class="control-label col-sm-4">Pilihan Paket</label>
+            <div class="col-sm-8">
               <select name="package_id" class="form-control">
                 @foreach($jenisPaket as $paket)
                   <option value="{{$paket->package_id}}">{{$paket->package_name}}</option>
@@ -136,14 +136,13 @@
               </select>
             </div>
           </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-success">Submit</button>
-              <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </form>
       </div>
+      <div class="modal-footer">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </form>
     </div>
   </div>
 </div>
@@ -259,7 +258,7 @@
               <input type="hidden" value="{{ $ideKelompok->team_id }}" name="team_id">
               <input type="hidden" value="{{ Auth::user()->user_id }}" name="filled_by">
                 {{ csrf_field() }}
-                
+
               <div class="form-group">
                 <label class="control-label col-sm-2">Deskripsi</label>
                 <div class="col-sm-10">
@@ -273,7 +272,7 @@
                   <input type="date" name="date">
                 </div>
               </div>
-              
+
               <div class="form-group">
                 <label class="control-label col-sm-2">Waktu Mulai</label>
                 <div class="col-sm-10">
@@ -294,7 +293,7 @@
                     <input type="file" class="form-control" name="mentoring_photo" >
                   </div>
                 </div>
-              
+
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <button type="submit" class="btn btn-success">Submit</button>
