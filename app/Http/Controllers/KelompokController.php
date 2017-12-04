@@ -75,6 +75,8 @@ class KelompokController extends Controller
 
     		$this->data['jenisPaket'] = DB::table('package')->get();
     		$this->data['jenisKategori'] = DB::table('category')->get();
+
+    		//Notifikasi
     		$this->data['notifikasi'] = $this->cekNotifikasi();
     		$this->data['jumlahNotifikasi'] = $this->cekJumlahNotifikasi($this->data['notifikasi']);
 

@@ -102,3 +102,5 @@ Route::get('/getmentoring', 'MentoringController@getMentoring')->name('getmentor
 
 // Get mentoring team
 Route::get('/getlistteam', 'KelompokController@getTimMentor')->name('listteam');
+
+Route::post('/kirimpesan', 'MessageController@kirimPesan')->name('kirimPesan');
