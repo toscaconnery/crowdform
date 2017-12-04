@@ -14,14 +14,14 @@
               <a class="nav-link" href="{{URL('')}}/Ide/DaftarIde">Daftar Ide</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#RegisterModal">Register</a>
+              <a class="nav-link" data-toggle="modal" data-target="#RegisterModal">Daftar</a>
             </li>
             @if(Auth::check())
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
-                    Logout
+                    Keluar
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -30,7 +30,7 @@
             </li>
             @else
               <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#LoginModal">Login</a>
+                <a class="nav-link" data-toggle="modal" data-target="#LoginModal">Masuk</a>
               </li>
             @endif
           </ul>
@@ -42,7 +42,7 @@
       <div class="container">
         <div class="intro-message">
           <h1>CrowdForm</h1>
-          <h3>Connecting People</h3>
+          <h3>Menghubungkan Anda dengan mentor bisnis terbaik</h3>
           <hr class="intro-divider">
         </div>
       </div>
@@ -55,8 +55,8 @@
           <div class="col-lg-5 ml-auto">
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
-            <h2 class="section-heading">Connecting Investors and Inovators :<br></h2>
-            <p class="lead">Register your account immediately. Get the chance to meet the best experienced mentors on our system for your business success. By paying registration of Rp.5000 you can enjoy access to our system.</p>
+            <h2 class="section-heading">Menghubungkan Investor dan Inovator :<br></h2>
+            <p class="lead">Daftarkan akunmu sekarang juga. Dapatkan kesempatan bertemu dan berbagi dengan mentor bisnis yang terdapat pada platform kami. Dengan mengeluarkan uang Rp.5000 anda dapat menggunakan dan menikmati fitur yang tersedia.</p>
           </div>
           <div class="col-lg-5 mr-auto">
             <img class="img-fluid" src="img/salaman.png" alt="">
@@ -73,7 +73,7 @@
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
             <h2 class="section-heading">Mentor</h2>
-            <p class="lead">Someone who has the best experience in the business world. In our system there are many certified mentors</p>
+            <p class="lead">Seseorang yang sudah berpengalaman didunia bisnis. Pada sistem kami banyak mentor yang sudah memiliki sertifikasi</p>
           </div>
           <div class="col-lg-5 ml-auto order-lg-1">
             <img class="img-fluid" src="img/mentor.jpg" alt="">
@@ -89,8 +89,8 @@
           <div class="col-lg-5 ml-auto">
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
-            <h2 class="section-heading">College Student</h2>
-            <p class="lead">Someone who has a business idea guided by a mentor. Make the business idea into a real business</p>
+            <h2 class="section-heading">Mahasiswa</h2>
+            <p class="lead">Mahasiswa merupakan orang yang memiliki ide bisnis yang akan dimbimbing oleh mentor untuk menjadikan ide bisnis tersebut menjadi sebuah bisnis yang handal dan berkompeten.</p>
           </div>
           <div class="col-lg-5 mr-auto ">
             <img class="img-fluid" src="img/mahasiswa.jpg" alt="">
@@ -99,46 +99,66 @@
       </div>
       <!-- /.container -->
     </section>
+
     <!-- /.content-section-a -->
-    <!-- <aside class="banner">
+     <aside class="banner">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 my-auto">
-            <h2>Connect to Our Social Media</h2>
+          <div class="col-lg-4 my-auto">
+            <h2>Paket CrowdForm</h2>
           </div>
-          <div class="col-lg-6 my-auto">
-            <ul class="list-inline banner-social-buttons">
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-twitter fa-fw"></i>
-                  <span class="network-name">Twitter</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-facebook fa-fw"></i>
-                  <span class="network-name">Facebook</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-linkedin fa-fw"></i>
-                  <span class="network-name">Linkedin</span>
-                </a>
-              </li>
-            </ul>
+          <div class="col-lg-8 my-auto">
+            <!-- TABLE HOVER -->
+            <div class="panel">
+              <div class="panel-heading">
+                <h3 class="panel-title">Daftar Paket</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table table-hover" style="color:white">
+                  <thead>
+                    <tr>
+                      <th>Nama Paket</th>
+                      <th>Reguler</th>
+                      <th>Deluxe</th>
+                      <th>Premium</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Pertemuan Mentoring (1 Pertemuan @ 120 Menit)</td>
+                      <td>5 Pertemuan</td>
+                      <td>5 Pertemuan</td>
+                      <td>5 Pertemuan</td>
+                    </tr>
+                    <tr>
+                      <td>Jumlah Tim dalam Sekali Mentoring</td>
+                      <td>5 Tim</td>
+                      <td>3 Tim</td>
+                      <td>1 Tim</td>
+                    </tr>
+                    <tr>
+                      <td>Harga</td>
+                      <td>300.000</td>
+                      <td>450.000</td>
+                      <td>550.000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- END TABLE HOVER -->
           </div>
         </div>
       </div>
       <!-- /.container -->
-    <!-- </aside>  -->
+    </aside>
     <!-- /.banner -->
 <!-- Modal Login -->
 <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Masuk</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -153,14 +173,14 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Kata Sandi</label>
             <div class="col-sm-10">
               <input type="password" class="form-control" name="password" placeholder="Password">
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Login</button>
+          <button type="submit" class="btn btn-success">Masuk</button>
         </div>
       </form>
     </div>
@@ -173,7 +193,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Daftar</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -216,9 +236,9 @@
               </div>
             </div>
             <div class="form-group row">
-              <label  class="col-sm-4 col-form-label">Password</label>
+              <label  class="col-sm-4 col-form-label">Kata Sandi</label>
               <div class="col-sm-8">
-                <input type="password" class="form-control" name="password" placeholder="Masukkan Password...">
+                <input type="password" class="form-control" name="password" placeholder="Masukkan Kata Sandi...">
               </div>
             </div>
             <div class="form-group row">
@@ -229,7 +249,7 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Register</button>
+          <button type="submit" class="btn btn-success">Daftar</button>
            </form>
         </div>
       </div>
