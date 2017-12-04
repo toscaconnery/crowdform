@@ -99,39 +99,59 @@
       </div>
       <!-- /.container -->
     </section>
+
     <!-- /.content-section-a -->
-    <!-- <aside class="banner">
+     <aside class="banner">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 my-auto">
-            <h2>Connect to Our Social Media</h2>
+          <div class="col-lg-4 my-auto">
+            <h2>Paket CrowdForm</h2>
           </div>
-          <div class="col-lg-6 my-auto">
-            <ul class="list-inline banner-social-buttons">
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-twitter fa-fw"></i>
-                  <span class="network-name">Twitter</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-facebook fa-fw"></i>
-                  <span class="network-name">Facebook</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#" class="btn btn-secondary btn-lg">
-                  <i class="fa fa-linkedin fa-fw"></i>
-                  <span class="network-name">Linkedin</span>
-                </a>
-              </li>
-            </ul>
+          <div class="col-lg-8 my-auto">
+            <!-- TABLE HOVER -->
+            <div class="panel">
+              <div class="panel-heading">
+                <h3 class="panel-title">Hover Row</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table table-hover" style="color:white">
+                  <thead>
+                    <tr>
+                      <th>Nama Paket</th>
+                      <th>Reguler</th>
+                      <th>Deluxe</th>
+                      <th>Premium</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Pertemuan Mentoring (1 Pertemuan @ 120 Menit)</td>
+                      <td>5 Pertemuan</td>
+                      <td>5 Pertemuan</td>
+                      <td>5 Pertemuan</td>
+                    </tr>
+                    <tr>
+                      <td>Jumlah Tim dalam Sekali Mentoring</td>
+                      <td>5 Tim</td>
+                      <td>3 Tim</td>
+                      <td>1 Tim</td>
+                    </tr>
+                    <tr>
+                      <td>Harga</td>
+                      <td>300.000</td>
+                      <td>450.000</td>
+                      <td>550.000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- END TABLE HOVER -->
           </div>
         </div>
       </div>
       <!-- /.container -->
-    <!-- </aside>  -->
+    </aside>
     <!-- /.banner -->
 <!-- Modal Login -->
 <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
