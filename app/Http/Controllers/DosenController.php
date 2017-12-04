@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Biodata;
+use App\Team;
+use Auth;
+use DB;
 
 class DosenController extends Controller
 {
@@ -37,9 +40,7 @@ class DosenController extends Controller
     				->join('category', 'category_id', '=', 'category_mentor.category_id')
     				->where('user.type_id', '=', 1)
     				->get();
-
         return $dosen;
-
     }
 
     public function getDosenDetail(Request $request){
@@ -52,5 +53,26 @@ class DosenController extends Controller
     				->get();
 
 
+    }
+
+    public function listMentor(){
+        if(Auth::check()) {
+            $user = Auth::user();
+            //cek sudah punya kategori
+            if(isset($user->team_id)) {
+                $this->data['listMentor'] = DB::table('users')
+                                                ->join('biodata', 'biodata.user_id', '=', 'users.user_id')
+                                                ->where('users.type_id', 1)
+                                                ->get();
+                return view('dashboard.daftarmentor',$this->data);
+            }
+            else{
+                //nggak punya tim
+                return back();
+            }
+        }
+        else {
+            return back();
+        }
     }
 }

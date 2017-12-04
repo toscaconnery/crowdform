@@ -121,11 +121,14 @@ class KelompokController extends Controller
     	return back();
     }
 
-    public function pilihMentor(Request $request) {
+    public function pilihMentorTim($id_mentor) {
         if (Auth::check()) {
             $user = Auth::user();
             if(isset($user->team_id)) {
-                dd("punya tim");
+                $tim = Team::where('team_id', $user->team_id)->get()->first();
+                $tim->mentor_id = $id_mentor;
+                $tim->save();
+                return redirect('/detaildatakelompok');
             }
             else {
                 dd("nggak punya tim");
