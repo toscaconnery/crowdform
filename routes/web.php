@@ -26,9 +26,11 @@ Route::post('/tambahidebisnis', 'IdeController@tambahIdeBisnis')->name('tambahId
 
 Route::post('/editidebisnis/{id}', 'IdeController@editIdeBisnis')->name('editIdeBisnis');
 
-Route::get('/daftarmentor', function(){
-  return view('dashboard/daftarmentor');
-});
+// Route::get('/daftarmentor', function(){
+//   return view('dashboard/daftarmentor');
+// });
+
+Route::get('/listmentor', 'DosenController@listMentor');
 
 Route::get('/statistik', function(){
   return view('dashboard/statistik');
@@ -90,4 +92,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/pilihmentor/{id}', 'KelompokController@pilihMentor');
+Route::get('/pilihmentortim/{id}', 'KelompokController@pilihMentorTim');

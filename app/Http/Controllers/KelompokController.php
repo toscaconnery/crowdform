@@ -121,8 +121,9 @@ class KelompokController extends Controller
     	return back();
     }
 
-    public function pilihMentor(Request $request) {
+    public function pilihMentorTim(Request $request) {
         if (Auth::check()) {
+        	dd("masuk fungsi milih dosen");
             $user = Auth::user();
             if(isset($user->team_id)) {
                 dd("punya tim");
