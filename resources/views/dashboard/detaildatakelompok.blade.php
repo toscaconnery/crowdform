@@ -20,6 +20,7 @@
                 <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modaTambahIde">Tambah Ide Bisnis</button>
               @else
                 <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modalEditIde">Edit Ide Bisnis</button>
+                <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modalRiwayatMentoring">Tambahkan Riwayat Mentoring</button>
               @endif
             </div>
           </div>    
@@ -241,6 +242,71 @@
     </div>
   </div>
 </div>
+
+
+<!-- Riwayat Mentoring Modal -->
+
+<div id="modalRiwayatMentoring" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Tambah Riwayat Mentoring</h4>
+      </div>
+      <div class="modal-body">
+          <form class="form-horizontal" action="{{Route('setmentoring') }}" method="post" enctype="multipart/form-data">
+              <input type="hidden" value="{{ $ideKelompok->team_id }}" name="team_id">
+              <input type="hidden" value="{{ Auth::user()->user_id }}" name="filled_by">
+                {{ csrf_field() }}
+                
+              <div class="form-group">
+                <label class="control-label col-sm-2">Deskripsi</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" name="mentoring_description" placeholder="Masukkan Deskripsi Mentoring..."></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Tanggal</label>
+                <div class="col-sm-10">
+                  <input type="date" name="date">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="control-label col-sm-2">Waktu Mulai</label>
+                <div class="col-sm-10">
+                  <input type="time" name="time_start">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Waktu Selesai</label>
+                <div class="col-sm-10">
+                  <input type="time" name="time_end">
+                </div>
+              </div>
+
+               <div class="form-group">
+                  <label  class="control-label col-sm-2">Upload Foto Mentoring</label>
+                  <div class="col-sm-10">
+                    <input type="file" class="form-control" name="mentoring_photo" >
+                  </div>
+                </div>
+              
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-success">Submit</button>
+                  <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 @endif
 
 <div class="clearfix"></div>

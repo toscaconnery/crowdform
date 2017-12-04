@@ -92,4 +92,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/pilihmentortim/{id}', 'KelompokController@pilihMentorTim');
+
+Route::get('/pilihmentor/{id}', 'KelompokController@pilihMentor');
+
+// Form Mentoring
+Route::post('/setmentoring', 'MentoringController@setMentoring')->name('setmentoring');
+

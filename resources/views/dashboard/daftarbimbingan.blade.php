@@ -9,13 +9,15 @@
   <!-- MAIN CONTENT -->
   <div class="main-content">
   		<div class="container-fluid">
-  			<h3 class="page-title">Daftar Bimbingan</h3>
+  			<h3 class="page-title">Daftar Riwayat Mentoring</h3>
+          
+
   		    <div class="row">
             <!-- TABLE HOVER -->
             <div class="col-md-12">
               <div class="panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Daftar Bimbingan</h3>
+                  <h3 class="panel-title">Daftar Mentoring</h3>
                 </div>
                 <div class="panel-body">
                   <table class="table table-hover">
@@ -54,3 +56,4 @@
 <!--/ MAIN -->
 <div class="clearfix"></div>
 @include('dashboard.footer')
+
