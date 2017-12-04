@@ -138,4 +138,11 @@ class KelompokController extends Controller
         }
     }
 
+    public function getTimMentor(){
+        $team = Team::where('mentor_id', Auth::user()->user_id)->get();
+
+        // dd($team);
+        return view('dashboard.detaildatakelompok', [ 'team' => $team]);
+    }
+
 }

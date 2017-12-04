@@ -3,12 +3,12 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.html"><img src="{{URL('')}}/dashboard/img/logo-CrowdForm.png" alt="CrowdForm Logo" class="img-responsive logo"></a>
+				<a href=""><img src="{{URL('')}}/dashboard/img/logo-CrowdForm.png" alt="CrowdForm Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
-				<div class="navbar-btn">
+				<!-- <div class="navbar-btn">
 					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
-				</div>
+				</div> -->
 				@if(Auth::check())
 					<div class="navbar-btn navbar-btn-right">
 						<a class="btn btn-danger update-pro nav-link" href="{{ route('logout') }}"
@@ -92,9 +92,14 @@
 						<li><a href="{{URL('dashboardhome')}}" class="active"><i class="lnr lnr-home"></i> <span>Beranda</span></a></li>
 						<li><a href="{{URL('idebisnis')}}" class=""><i class="lnr lnr-rocket"></i> <span>Ide Bisnis</span></a></li>
 						<li><a href="{{URL('daftarmentor')}}" class=""><i class="lnr lnr-user"></i> <span>Daftar Mentor</span></a></li>
-						<li><a href="{{URL('daftarbimbingan')}}" class=""><i class="lnr lnr-calendar-full"></i> <span>Riwayat Mentoring</span></a></li>
+						<li><a href="{{Route('getmentoring')}}" class=""><i class="lnr lnr-calendar-full"></i> <span>Riwayat Mentoring</span></a></li>
+						
+						@if(Auth::user()->type_id == 2)
 						<li><a href="{{URL('detaildatakelompok')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
-						<li><a href="{{URL('statistik')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Statistik Mentoring</span></a></li>
+						@else
+						<li><a href="{{URL('getlistteam')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
+						@endif
+						<!-- <li><a href="{{URL('statistik')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Statistik Mentoring</span></a></li> -->
 						<!-- <li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
