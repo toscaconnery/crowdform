@@ -102,12 +102,11 @@ Route::get('/pilihmentor/{id}', 'KelompokController@pilihMentor');
 // Form Mentoring
 Route::post('/setmentoring', 'MentoringController@setMentoring')->name('setmentoring');
 
-<<<<<<< HEAD
-=======
+
 Route::get('/getmentoring', 'MentoringController@getMentoring')->name('getmentoring');
 
 // Get mentoring team
 Route::get('/getlistteam', 'KelompokController@getTimMentor')->name('listteam');
 
->>>>>>> c163100a6ed3989925c669459801ee9b9f49e0c0
+
 Route::post('/kirimpesan', 'MessageController@kirimPesan')->name('kirimPesan');
