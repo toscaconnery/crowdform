@@ -107,15 +107,10 @@
                   <input type="number" class="form-control" name="hp" placeholder="Masukkan No.hp...">
                 </div>
               </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-              </div>
           </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Submit</button>
       </div>
     </div>
   </div>
