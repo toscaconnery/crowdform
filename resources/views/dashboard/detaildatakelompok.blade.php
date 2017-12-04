@@ -18,7 +18,7 @@
                 <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modalBuatKelompok">Buat Kelompok</button>
               @endif
               @if($punyaIde == 0)
-                <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modaTambahIde">Tambah Ide Bisnis</button>
+                <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modalTambahIde">Tambah Ide Bisnis</button>
               @else
                 <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modalEditIde">Edit Ide Bisnis</button>
                 <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#modalRiwayatMentoring">Tambahkan Riwayat Mentoring</button>
