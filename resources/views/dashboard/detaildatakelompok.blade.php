@@ -10,6 +10,7 @@
   <div class="main-content">
 
   		<div class="container-fluid">
+       @if(Auth::user()->type_id == 2)
   			<h3 class="page-title">Detail Data Kelompok</h3>
           <div class="row">
             <div class="col-md-12">
@@ -95,13 +96,53 @@
               @endforeach
             @endif
             </div>
+            
+            @else
+            <h3 class="page-title">Daftar Kelompok Mentoring</h3>
+
+          <div class="row">
+            <!-- TABLE HOVER -->
+            <div class="col-md-12">
+              <div class="panel">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Daftar Mentoring</h3>
+                </div>
+                <div class="panel-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Nama Tim</th>
+                        <th>Jumlah Mentoring</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $numbering = 1; ?>
+                      @foreach($team as $key)
+                      <tr>
+                        <td>{{ $numbering }}</td>
+                        <td>{{ $key->team_name }}</td>
+                        <td>{{ $key->mentoring_count}}</td>
+                        <td><a type="button" id="formMentoring" class="formMentoring btn btn-success" name="button" data-toggle="modal" data-target="#modalMentorForm" data-id="{{ $key->team_id }} ">Buka Form Mentoring</a></td>
+                        <?php $numbering++ ?>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- END TABLE HOVER -->
+            </div>
+          </div>
+          @endif
           </div>
         </div>
       </div>
   <!--/ MAIN CONTENT -->
 </div>
 <!--/ MAIN -->
-
+@if(Auth::user()->type_id == 2)
 <!-- Modal -->
 <div id="modalBuatKelompok" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -257,6 +298,15 @@
           <form class="form-horizontal" action="{{Route('setmentoring') }}" method="post" enctype="multipart/form-data">
               <input type="hidden" value="{{ $ideKelompok->team_id }}" name="team_id">
               <input type="hidden" value="{{ Auth::user()->user_id }}" name="filled_by">
+               <input type="hidden" value="{{ Auth::user()->type_id }}" name="type_id">
+              @if (Auth::user()->type_id == 1)
+             
+                <input type="hidden" value="{{ Auth::user()->user_id }}" name="mentor_id">
+              @else
+                <input type="hidden" value="{{ $kelompok->mentor_id }}" name="mentor_id">
+              @endif
+
+
                 {{ csrf_field() }}
 
               <div class="form-group">
@@ -307,6 +357,91 @@
 </div>
 
 @endif
+@else
+<div id="modalMentorForm" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Tambah Riwayat Mentoring</h4>
+      </div>
+      <div class="modal-body">
+          <form class="form-horizontal" action="{{Route('setmentoring') }}" method="post" enctype="multipart/form-data">
+              <input id="team_id" type="hidden" name="team_id">
+              <input type="hidden" value="{{ Auth::user()->user_id }}" name="filled_by">
+               <input type="hidden" value="{{ Auth::user()->type_id }}" name="type_id">
+              @if (Auth::user()->type_id == 1)
+             
+                <input type="hidden" value="{{ Auth::user()->user_id }}" name="mentor_id">
+              @else
+                <input type="hidden" value="{{ Auth::user()->user_id }}" name="mentor_id">
+              @endif
 
+
+                {{ csrf_field() }}
+                
+              <div class="form-group">
+                <label class="control-label col-sm-2">Deskripsi</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" name="mentoring_description" placeholder="Masukkan Deskripsi Mentoring..."></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Tanggal</label>
+                <div class="col-sm-10">
+                  <input type="date" name="date">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="control-label col-sm-2">Waktu Mulai</label>
+                <div class="col-sm-10">
+                  <input type="time" name="time_start">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Waktu Selesai</label>
+                <div class="col-sm-10">
+                  <input type="time" name="time_end">
+                </div>
+              </div>
+
+               <div class="form-group">
+                  <label  class="control-label col-sm-2">Upload Foto Mentoring</label>
+                  <div class="col-sm-10">
+                    <input type="file" class="form-control" name="mentoring_photo" >
+                  </div>
+                </div>
+              
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-success">Submit</button>
+                  <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script>
+$(document).on("click", ".formMentoring", function () {
+     var temp = $(this).data('id');
+     console.log(temp);
+     $("#modalMentorForm #team_id").val( temp );
+     // As pointed out in comments, 
+     // it is superfluous to have to manually call the modal.
+     // $('#addBookDialog').modal('show');
+});
+</script>
+
+@endif
 <div class="clearfix"></div>
 @include('dashboard.footer')
