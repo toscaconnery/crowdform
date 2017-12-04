@@ -78,6 +78,8 @@ class KelompokController extends Controller
     		$this->data['notifikasi'] = $this->cekNotifikasi();
     		$this->data['jumlahNotifikasi'] = $this->cekJumlahNotifikasi($this->data['notifikasi']);
 
+            // dd($this->data);
+
     		return view('dashboard.detaildatakelompok', $this->data);
     	}
     	else {
