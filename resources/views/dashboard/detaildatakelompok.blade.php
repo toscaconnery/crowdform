@@ -56,6 +56,25 @@
   							<!-- END PANEL HEADLINE -->
   						</div>
             </div>
+
+          <div class="row">
+
+              <div class="col-md-12">
+                <!-- PANEL HEADLINE -->
+                <div class="panel panel-headline">
+                  <div class="panel-heading">
+                    @if( $punyaMentor == 1)
+                    <h1 class="panel-title">{{$mentor->first_name}}{{" "}}{{$mentor->last_name}}</h1>
+                    <p>Mentor</p>
+                    <p>Specialities: {{$mentor->specialities}}</p>
+                    @endif
+                    
+                  </div>
+                </div>
+                <!-- END PANEL HEADLINE -->
+              </div>
+            </div>
+
           <div class="row">
             <div class="col-md-12">
               <form class="form-inline" action="{{route('tambahkanAnggotaKelompok')}}" method="post">

@@ -63,6 +63,7 @@ class KelompokController extends Controller
     			$this->data['punyaKelompok'] = 1;
     		}
     		$this->data['punyaIde'] = 0;
+    		$this->data['punyaMentor'] = 0;
     		if($this->data['punyaKelompok'] == 1) {
     			$id_kelompok = Auth::user()->team_id;
     			$this->data['kelompok'] = DB::table('team')->where('team_id', $id_kelompok)->get()->first();
@@ -71,6 +72,15 @@ class KelompokController extends Controller
     				$this->data['ideKelompok'] = DB::table('idea')->where('team_id', $id_kelompok)->get()->first();
     			}
     			$this->data['anggotaKelompok'] = DB::table('users')->where('team_id', $id_kelompok)->get();
+
+    			if(isset($this->data['kelompok']->mentor_id)) {
+    				$id_mentor = $this->data['kelompok']->mentor_id;
+    				$this->data['mentor'] = DB::table('biodata')
+    											->join('users', 'users.user_id', '=', 'biodata.user_id')
+    											->where('biodata.user_id', $id_mentor)
+    											->first();
+    				$this->data['punyaMentor'] = 1;
+    			}
     		}
 
     		$this->data['jenisPaket'] = DB::table('package')->get();
