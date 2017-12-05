@@ -68,7 +68,11 @@ class DosenController extends Controller
             }
             else{
                 //nggak punya tim
-                return back();
+                
+                $mentor = User::where('type_id', 1)->get();
+                // dd($mentor);
+                
+                return view('dashboard.daftarmentor', ['listMentor' => $mentor]);
             }
         }
         else {
