@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{{URL('')}}/Ide/DaftarIde">Daftar Ide</a>
+              <a class="nav-link" href="{{URL('')}}/idebisnis">Daftar Ide</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="modal" data-target="#RegisterModal">Daftar</a>
