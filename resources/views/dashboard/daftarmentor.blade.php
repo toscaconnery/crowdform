@@ -10,11 +10,7 @@
   <div class="main-content">
   		<div class="container-fluid">
   			<h3 class="page-title">Daftar Mentor Bisnis</h3>
-        <div class="row">
-          <div class="col-md-4">
-            <button type="button" class="btn btn-success" name="button" data-toggle="modal" data-target="#myModal">Tambah Data Mentor</button><br>
-          </div>
-        </div><br>
+        <br>
   		    <div class="row">
             @foreach($listMentor as $mentor)
               <div class="col-md-4">
@@ -50,39 +46,6 @@
   <!--/ MAIN CONTENT -->
 </div>
 <!--/ MAIN -->
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Tambah Data Mentor</h4>
-      </div>
-      <div class="modal-body">
-          <form class="form-horizontal" action="" method="post">
-              <div class="form-group">
-                <label class="control-label col-sm-2">Nama Mentor</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Mentor...">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2">No.Hp</label>
-                <div class="col-sm-10">
-                  <input type="number" class="form-control" name="hp" placeholder="Masukkan No.hp...">
-                </div>
-              </div>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-success">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="clearfix"></div>
 @include('dashboard.footer')

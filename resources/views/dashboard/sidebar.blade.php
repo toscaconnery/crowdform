@@ -95,11 +95,13 @@
 						<li><a href="{{URL('idebisnis')}}" class=""><i class="lnr lnr-rocket"></i> <span>Ide Bisnis</span></a></li>
 						<li><a href="{{URL('listmentor')}}" class=""><i class="lnr lnr-user"></i> <span>Daftar Mentor</span></a></li>
 						<li><a href="{{Route('getmentoring')}}" class=""><i class="lnr lnr-calendar-full"></i> <span>Riwayat Mentoring</span></a></li>
-		
+
 						<li><a href="{{URL('kotakmasuk')}}" class=""><i class="lnr lnr-envelope"></i> <span>Kotak Masuk</span></a></li>
 
-						@if(Auth::user()->type_id == 2)
-						<li><a href="{{URL('detaildatakelompok')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
+						@if(Auth::check())
+							@if(Auth::user()->type_id == 2)
+							<li><a href="{{URL('detaildatakelompok')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
+							@endif
 
 						<!-- <li><a href="{{URL('statistik')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Statistik Mentoring</span></a></li> -->
 						
@@ -123,6 +125,7 @@
 						<li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
 						<li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
 						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li> -->
+
 					</ul>
 				</nav>
 			</div>
@@ -163,6 +166,7 @@
 		</div>
 		  <!-- /Modal login-->
 
+		  	@if(Auth::check())
 			<!-- Modal Chat -->
 			<div id="ChatModal" class="modal fade" role="dialog">
 			  <div class="modal-dialog">
@@ -179,7 +183,7 @@
 			      		<div class="form-group">
 			      			<label class="control-label col-sm-2">Penerima</label>
 			      			<div class="col-sm-10">
-			      				<input {{Auth::user()->type_id == 2 ? "Disabled" : ""}} type="text" class="form-control" placeholder="{{Auth::user()->type_id == 1 ? "Masukkan nama tim" : ""}}" name="destination" value="{{Auth::user()->type_id == 2 ? "Mentor" : ""}}">
+			      				<input {{Auth::user()->type_id == 2 ? 'Disabled' : ''}} type="text" class="form-control" placeholder="{{Auth::user()->type_id == 1 ? 'Masukkan nama tim' : ''}}" name="destination" value="{{Auth::user()->type_id == 2 ? 'Mentor' : ''}}">
 			      			</div>
 			      		</div>
 			      		<div class="form-group">
@@ -200,6 +204,8 @@
 			        <button type="submit" class="btn btn-success">Kirim</button>
 			      </div>
 			      </form>
+
 			    </div>
 			  </div>
 			</div>
+			@endif
