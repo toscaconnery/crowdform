@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('beranda');
 })->name('home');
 
-Route::get('dashboardhome', 'DashboardController@dashboardHome');
+Route::get('dashboardhome', 'DashboardController@dashboardHome')->name('dashboardHome');
 
 // Route::get('/idebisnis', function(){
 //   return view('dashboard/idebisnis');
