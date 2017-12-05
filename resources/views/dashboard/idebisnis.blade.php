@@ -22,6 +22,10 @@
                     </div>
                   </div>
                   <div class="panel-body">
+                    @if(isset($ide->idea_photo))
+                      <img src="{{URL('')}}/{{$ide->idea_photo}}" width="250" height="200"  style="margin-left:1em;margin-right:1em" alt="Avatar">
+
+                    @endif
                     <p>{{$ide->idea_description}}</p>
                   </div>
                   <div class="panel-footer">

@@ -13,6 +13,11 @@
             <li class="nav-item">
               <a class="nav-link" href="{{URL('')}}/idebisnis">Daftar Ide</a>
             </li>
+            @if(Auth::check())
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('dashboardHome')}}">Beranda</a>
+              </li>
+            @endif
             <li class="nav-item">
               <a class="nav-link" data-toggle="modal" data-target="#RegisterModal">Daftar</a>
             </li>
@@ -27,7 +32,7 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>
-            </li>
+              </li>
             @else
               <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#LoginModal">Masuk</a>

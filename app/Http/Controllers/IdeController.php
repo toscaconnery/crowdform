@@ -16,6 +16,13 @@ class IdeController extends Controller
 	    	$ide->idea_description = $request->idea_description;
 	    	$ide->category_id = $request->category_id;
 	    	$ide->team_id = Auth::user()->team_id;
+
+            $file = $request->file('idea_photo');
+
+            $destination = public_path('uploads');
+            $file->move($destination, $file->getClientOriginalName());
+            $ide->idea_photo = 'uploads/' . $file->getClientOriginalName();
+
 	    	$ide->save();
 
 	    	return back();

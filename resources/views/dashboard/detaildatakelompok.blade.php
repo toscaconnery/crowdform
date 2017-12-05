@@ -217,7 +217,7 @@
         <h4 class="modal-title">Tambah Data Ide Bisnis</h4>
       </div>
       <div class="modal-body">
-          <form class="form-horizontal" action="{{route('tambahIdeBisnis')}}" method="post">
+          <form class="form-horizontal" action="{{route('tambahIdeBisnis')}}" method="post" enctype="multipart/form-data">
               <div class="form-group">
                 {{ csrf_field() }}
                 <label class="control-label col-sm-2">Judul</label>
@@ -240,6 +240,12 @@
                       <option value="{{$kategori->category_id}}">{{$kategori->category_name}}</option>
                     @endforeach
                   </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2">Gambar Ide</label>
+                <div class="col-sm-10">
+                  <input type="file" name="idea_photo" class="form-control">
                 </div>
               </div>
               <div class="form-group">
