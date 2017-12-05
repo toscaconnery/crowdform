@@ -102,17 +102,10 @@ Route::get('/pilihmentortim/{id}', 'KelompokController@pilihMentorTim');
 // Form Mentoring
 Route::post('/setmentoring', 'MentoringController@setMentoring')->name('setmentoring');
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 77c2b38f49596e1e32dd806a82c34b67a412b0db
 Route::get('/getmentoring', 'MentoringController@getMentoring')->name('getmentoring');
 
 // Get mentoring team
 Route::get('/getlistteam', 'KelompokController@getTimMentor')->name('listteam');
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 77c2b38f49596e1e32dd806a82c34b67a412b0db
 Route::post('/kirimpesan', 'MessageController@kirimPesan')->name('kirimPesan');

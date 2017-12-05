@@ -72,11 +72,13 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{URL('')}}/{{Auth::user()->user_photo}}" class="img-circle" alt="Avatar"> <span>{{Auth::user()->first_name}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-							<ul class="dropdown-menu">
-								<li><a href="{{URL('/profil')}}"><i class="lnr lnr-user"></i> <span>Profil</span></a></li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="{{URL('')}}/{{Auth::user()->user_photo}}" class="img-circle" alt="Avatar"> <span>{{Auth::user()->first_name}}</span> 
+							<i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<!-- <ul class="dropdown-menu">
+								<li><a href="{{URL('/profil')}}"><i class="lnr lnr-user"></i> <span>Profil</span></a></li> -->
 								<!-- <li><a href="{{URL('/setting')}}"><i class="lnr lnr-cog"></i> <span>Pengaturan</span></a></li> -->
-							</ul>
+							<!-- </ul> -->
 						</li>
 					</ul>
 				</div>
@@ -93,8 +95,7 @@
 						<li><a href="{{URL('idebisnis')}}" class=""><i class="lnr lnr-rocket"></i> <span>Ide Bisnis</span></a></li>
 						<li><a href="{{URL('listmentor')}}" class=""><i class="lnr lnr-user"></i> <span>Daftar Mentor</span></a></li>
 						<li><a href="{{Route('getmentoring')}}" class=""><i class="lnr lnr-calendar-full"></i> <span>Riwayat Mentoring</span></a></li>
-<<<<<<< HEAD
-						
+		
 						<li><a href="{{URL('kotakmasuk')}}" class=""><i class="lnr lnr-envelope"></i> <span>Kotak Masuk</span></a></li>
 
 						@if(Auth::user()->type_id == 2)
@@ -103,22 +104,12 @@
 						<!-- <li><a href="{{URL('statistik')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Statistik Mentoring</span></a></li> -->
 						
 
-=======
 
-						@if(Auth::user()->type_id == 2)
-						<li><a href="{{URL('detaildatakelompok')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
-						<li><a href="{{URL('statistik')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Statistik Mentoring</span></a></li>
-						<li><a href="{{URL('kotakmasuk')}}" class=""><i class="lnr lnr-envelope"></i> <span>Kotak Masuk</span></a></li>
-						
->>>>>>> 77c2b38f49596e1e32dd806a82c34b67a412b0db
 						@else
 						<li><a href="{{URL('getlistteam')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
 						@endif
 						<!-- <li><a href="{{URL('statistik')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Statistik Mentoring</span></a></li> -->
-<<<<<<< HEAD
 
-=======
->>>>>>> 77c2b38f49596e1e32dd806a82c34b67a412b0db
 						<!-- <li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
