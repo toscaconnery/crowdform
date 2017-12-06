@@ -25,7 +25,7 @@
                   </div>
                   <div class="panel-body" align="center">
                     @if(isset($ide->idea_photo))
-                      <img src="{{URL('')}}/{{$ide->idea_photo}}" width="100" class="img-circle" height="100"  style="margin-left:5;margin-right:1em" alt="Avatar">
+                      <img src="{{URL('')}}/{{$ide->idea_photo}}" width="200" class="img-rounded" height="200"  style="margin-left:5;margin-right:1em" alt="Avatar">
 
                     @endif
                     <p>{{$ide->idea_description}}</p>
