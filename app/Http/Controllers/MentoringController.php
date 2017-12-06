@@ -56,16 +56,18 @@ class MentoringController extends Controller
     }
 
     public function getMentoring(){
+        if(Auth::check()) {
+            $mentoring = DB::table('mentoring')
+                        ->join('users', 'users.user_id', '=', 'mentoring.mentor_id')
+                        ->join('team', 'team.team_id', '=', 'mentoring.team_id')
+                        ->where('mentoring.filled_by', '=', Auth::user()->user_id)
+                        ->get();
 
-        $mentoring = DB::table('mentoring')
-                    ->join('users', 'users.user_id', '=', 'mentoring.mentor_id')
-                    ->join('team', 'team.team_id', '=', 'mentoring.team_id')
-                    ->where('mentoring.filled_by', '=', Auth::user()->user_id)
-                    ->get();
+            // dd($mentoring);
 
-        // dd($mentoring);
-
-        return view('dashboard.daftarbimbingan', ['mentoring' => $mentoring]);
+            return view('dashboard.daftarbimbingan', ['mentoring' => $mentoring]);
+        }
+        return back();
     }
 
 }

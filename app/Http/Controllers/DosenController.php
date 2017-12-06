@@ -13,24 +13,31 @@ class DosenController extends Controller
 {
     //
     public function setBiodata(Request $request){
+        if(Auth::check()) {
+            //cek biodata udah ada apa belum
+            $jumlahBiodata = Biodata::where('user_id', Auth::user()->user_id)->count();
+            if ($jumlahBiodata == 0) {
+                $biodata = new Biodata();
+            }
+            //jika sudah punya biodata
+            else {
+                $biodata = Biodata::where('user_id', Auth::user()->user_id)->first();
+            }
+            $biodata->s1 = $request->s1;
+            $biodata->s1_year = $request->s1_year;
+            $biodata->s2 = $request->s2;
+            $biodata->s2_year = $request->s2_year;
+            $biodata->s3 = $request->s3;
+            $biodata->s3_year = $request->s3_year;
+            $biodata->specialities = $request->specialities;
+            $biodata->interest = $request->interest;
+            $biodata->hobby = $request->hobby;
+            $biodata->major = $request->major;
+            $biodata->user_id = $request->user_id;
+            $biodata->save();
 
-    	$biodata = new Biodata();
-    	$biodata->s1 = $request->s1;
-    	$biodata->s1_year = $request->s1_year;
-    	$biodata->s2 = $request->s2;
-    	$biodata->s2_year = $request->s2_year;
-    	$biodata->s3 = $request->s3;
-    	$biodata->s3_year = $request->s3_year;
-    	$biodata->specialities = $request->specialities;
-    	$biodata->interest = $request->interest;
-    	$biodata->hobby = $request->hobby;
-    	$biodata->major = $request->major;
-    	$biodata->user_id = $request->user_id;
-
-
-    	$biodata->save();
-
-    	return view('dashboard.profil');
+            return view('dashboard.profil');
+        }
     }
 
     public function getDosen(Request $request){

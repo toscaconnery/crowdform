@@ -100,7 +100,7 @@ Route::get('/register', function(){
 // Register
 Route::post('/register', 'UserController@registerUser')->name('user.register');
 
-Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
+// Route::post('/biodata', 'BiodataController@setBiodata')->name('biodata.set');
 
 Auth::routes();
 
