@@ -65,12 +65,16 @@ class DosenController extends Controller
     public function listMentor(){
         if(Auth::check()) {
             $user = Auth::user();
+            $this->data['notifikasi'] = $this->cekNotifikasi();
+            $this->data['jumlahNotifikasi'] = $this->cekJumlahNotifikasi($this->data['notifikasi']);
             //cek sudah punya kategori
             if(isset($user->team_id)) {
                 $this->data['listMentor'] = DB::table('users')
                                                 ->join('biodata', 'biodata.user_id', '=', 'users.user_id')
                                                 ->where('users.type_id', 1)
                                                 ->get();
+                $this->data['punyaMentor'] = Team::where('team_id',$user->team_id)
+                                                ->whereNotNull('mentor_id')->count();
                 return view('dashboard.daftarmentor',$this->data);
             }
             else{
@@ -78,12 +82,15 @@ class DosenController extends Controller
                 
                 $mentor = User::where('type_id', 1)->get();
                 // dd($mentor);
+                $punyaMentor = 0;
                 
-                return view('dashboard.daftarmentor', ['listMentor' => $mentor]);
+                return view('dashboard.daftarmentor', ['listMentor' => $mentor, 'punyaMentor' => $punyaMentor]);
             }
         }
         else {
-            return back();
+            $mentor = User::where('type_id', 1)->get();
+            $punyaMentor = 0;
+            return view('dashboard.daftarmentor', ['listMentor' => $mentor, 'punyaMentor' => $punyaMentor]);
         }
     }
 }

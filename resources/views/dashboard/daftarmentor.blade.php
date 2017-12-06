@@ -10,8 +10,12 @@
   <div class="main-content">
   		<div class="container-fluid">
   			<h3 class="page-title">Daftar Mentor Bisnis</h3>
-         @if(Auth::user()->type_id == 1)
-          <div class="text-left"><a class="btn btn-info" data-toggle="modal" data-target="#BiodataModal">Tambah Biodata</a></div>
+          @if(Auth::check())
+            @if(Auth::user()->type_id == 1)
+              <div class="text-left">
+                <a class="btn btn-info" data-toggle="modal" data-target="#BiodataModal">Tambah Biodata</a>
+              </div>
+            @endif
           @endif
         <br>
          
@@ -34,12 +38,14 @@
                     @endif
                     <p style="text-align:center">Speciality:{{$mentor->specialities}}</p>
                   </div>
-                  @if(Auth::user()->type_id == 2)
-                  <div class="panel-footer">
-                    <a href="{{URL('')}}/pilihmentortim/{{$mentor->user_id}}">
-                      <button type="button" class="btn btn-primary" name="button">Pilih Mentor</button>
-                    </a>
-                  </div>
+                  @if(Auth::check())
+                    @if(Auth::user()->type_id == 2)
+                    <div class="panel-footer">
+                      <a href="{{URL('')}}/pilihmentortim/{{$mentor->user_id}}">
+                        <button type="button" {{$punyaMentor == 0 && isset(Auth::user()->team_id) ? '' : 'disabled=""' }} class="btn btn-primary" name="button">Pilih Mentor</button>
+                      </a>
+                    </div>
+                    @endif
                   @endif
                 </div>
                 <!-- END PANEL WITH FOOTER -->
@@ -58,7 +64,7 @@
 @include('dashboard.footer')
 
 
-
+@if(Auth::check())
 <!-- Modal Biodata -->
 <div class="modal fade" id="BiodataModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -142,4 +148,5 @@
     </div>
   </div>
   <!-- /Modal biodata-->
+  @endif
 
