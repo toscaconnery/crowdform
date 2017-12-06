@@ -16,7 +16,9 @@
                 <!-- PANEL WITH FOOTER -->
                 <div class="panel">
                   <div class="panel-heading">
-                    <h3 class="panel-title">{{$ide->idea_name}}</h3>
+                    <a href="{{URL('')}}/detailide/{{$ide->idea_id}}">
+                      <h3 class="panel-title">{{$ide->idea_name}}</h3>
+                    </a>
                     <div class="right">
                       <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                     </div>

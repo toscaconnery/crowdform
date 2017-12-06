@@ -15,13 +15,13 @@
                 <!-- PANEL WITH FOOTER -->
                 <div class="panel">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Judul ide disini</h3>
+                    <h3 class="panel-title">{{$detailIde->idea_name}}</h3>
                     <div class="right">
                       <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                     </div>
                   </div>
                   <div class="panel-body">
-                    <h4> deskripsi ide disini </h4>
+                    <h4>{{$detailIde->idea_description}}</h4>
                   </div>
                   <div class="panel-footer">
                     <h5>CrowdForm Terdepan dalam menyukseskan bisnis anda</h5>

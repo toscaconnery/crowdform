@@ -48,9 +48,11 @@ Route::get('/kotakmasuk', function(){
   return view('dashboard/kotakmasuk');
 });
 
-Route::get('/detailide', function(){
-  return view('dashboard/detailide');
-});
+// Route::get('/detailide', function(){
+//   return view('dashboard/detailide');
+// });
+
+Route::get('/detailide/{id}', 'IdeController@detailIde')->name('detailIde');
 
 Route::get('/detailmentor', function(){
   return view('dashboard/detailmentor');

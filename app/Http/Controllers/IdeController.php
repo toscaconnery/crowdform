@@ -68,5 +68,13 @@ class IdeController extends Controller
     	return view('dashboard.idebisnis', $this->data);
     }
 
+    public function detailIde($id_ide) {
+        if(Auth::check()) {
+            $this->data['notifikasi'] = $this->cekNotifikasi();
+            $this->data['jumlahNotifikasi'] = $this->cekJumlahNotifikasi($this->data['notifikasi']);
+        }
+        $this->data['detailIde'] = Idea::where('idea_id', $id_ide)->first();
+        return view('dashboard.detailide', $this->data);
+    }
 
 }
