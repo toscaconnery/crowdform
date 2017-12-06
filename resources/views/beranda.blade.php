@@ -60,8 +60,8 @@
           <div class="col-lg-5 ml-auto">
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
-            <h2 class="section-heading">Menghubungkan Investor dan Inovator :<br></h2>
-            <p class="lead">Daftarkan akunmu sekarang juga. Dapatkan kesempatan bertemu dan berbagi dengan mentor bisnis yang terdapat pada platform kami. Dengan mengeluarkan uang Rp.5000 anda dapat menggunakan dan menikmati fitur yang tersedia.</p>
+            <h2 class="section-heading">Menghubungkan Mentor dan Inovator :<br></h2>
+            <p class="lead">Daftarkan akunmu sekarang juga. Dapatkan kesempatan bertemu dan berbagi dengan mentor bisnis yang terdapat pada platform kami. Dengan mengeluarkan uang Rp.300000 anda dapat menggunakan dan menikmati fitur yang tersedia.</p>
           </div>
           <div class="col-lg-5 mr-auto">
             <img class="img-fluid" src="img/salaman.png" alt="">
@@ -78,7 +78,7 @@
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
             <h2 class="section-heading">Mentor</h2>
-            <p class="lead">Seseorang yang sudah berpengalaman didunia bisnis. Pada sistem kami banyak mentor yang sudah memiliki sertifikasi</p>
+            <p class="lead">Seseorang yang sudah berpengalaman didunia bisnis.</p>
           </div>
           <div class="col-lg-5 ml-auto order-lg-1">
             <img class="img-fluid" src="img/mentor.jpg" alt="">

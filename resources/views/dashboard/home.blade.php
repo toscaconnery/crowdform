@@ -24,9 +24,9 @@
                     Silahkan bersenang senang dengan platform kami, anda memiliki akses sebagai berikut :<br>
                     <h4><span class="label label-primary" style="margin-bottom:20px">Ide Bisnis</span></h4>
                     <h4><span class="label label-primary" style="margin-bottom:20px">Daftar Mentor</span></h4>
-                    <h4><span class="label label-primary" style="margin-bottom:20px">Daftar Bimbingan</span></h4>
+                    <h4><span class="label label-primary" style="margin-bottom:20px">Riwayat Mentoring</span></h4>
                     <h4><span class="label label-primary" style="margin-bottom:20px">Data Kelompok</span></h4>
-                    <h4><span class="label label-primary" style="margin-bottom:20px">Statistika Mentoring</span></h4>
+                    <h4><span class="label label-primary" style="margin-bottom:20px">Kotak Masuk</span></h4>
                   </div>
                   <div class="panel-footer">
                     <h5>CrowdForm Terdepan dalam menyukseskan bisnis anda</h5>
