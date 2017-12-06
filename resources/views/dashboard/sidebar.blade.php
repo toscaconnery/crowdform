@@ -131,7 +131,7 @@
 								@if(Auth::user()->type_id == 2)		{{-- mahasiswa --}}
 									<li><a href="{{URL('detaildatakelompok')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
 								@elseif(Auth::user()->type_id == 1)      {{-- mentor --}}
-									<li><a href="{{URL('getlistteam')}}" class=""><i class="lnr lnr-list"></i> <span>List Kelompok</span></a></li>
+									<li><a href="{{URL('getlistteam')}}" class=""><i class="lnr lnr-list"></i> <span>Data Kelompok</span></a></li>
 								@endif
 							@endif
 
