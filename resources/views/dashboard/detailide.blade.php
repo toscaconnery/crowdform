@@ -9,32 +9,26 @@
   <!-- MAIN CONTENT -->
   <div class="main-content">
   		<div class="container-fluid">
-  			<h3 class="page-title">Ide Bisnis</h3>
+  			<h3 class="page-title">Detail Ide</h3>
   		    <div class="row">
-            @foreach($listIde as $ide)
-              <div class="col-md-4">
+              <div class="col-md-12">
                 <!-- PANEL WITH FOOTER -->
                 <div class="panel">
                   <div class="panel-heading">
-                    <h3 class="panel-title">{{$ide->idea_name}}</h3>
+                    <h3 class="panel-title">Judul ide disini</h3>
                     <div class="right">
                       <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                     </div>
                   </div>
-                  <div class="panel-body" align="center">
-                    @if(isset($ide->idea_photo))
-                      <img src="{{URL('')}}/{{$ide->idea_photo}}" width="100" class="img-circle" height="100"  style="margin-left:5;margin-right:1em" alt="Avatar">
-
-                    @endif
-                    <p>{{$ide->idea_description}}</p>
+                  <div class="panel-body">
+                    <h4> deskripsi ide disini </h4>
                   </div>
                   <div class="panel-footer">
-                    <h5>{{$ide->team_name}}</h5>
+                    <h5>CrowdForm Terdepan dalam menyukseskan bisnis anda</h5>
                   </div>
                 </div>
                 <!-- END PANEL WITH FOOTER -->
               </div>
-            @endforeach
           </div>
         </div>
       </div>

@@ -48,6 +48,14 @@ Route::get('/kotakmasuk', function(){
   return view('dashboard/kotakmasuk');
 });
 
+Route::get('/detailide', function(){
+  return view('dashboard/detailide');
+});
+
+Route::get('/detailmentor', function(){
+  return view('dashboard/detailmentor');
+});
+
 
 // Login
 //Route::post('/login', 'UserController@login')->name('user.login');

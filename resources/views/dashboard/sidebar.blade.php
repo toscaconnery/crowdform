@@ -73,7 +73,7 @@
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="{{URL('')}}/{{Auth::user()->user_photo}}" class="img-circle" alt="Avatar"> <span>{{Auth::user()->first_name}}</span> 
+							<img src="{{URL('')}}/{{Auth::user()->user_photo}}" class="img-circle" alt="Avatar"> <span>{{Auth::user()->first_name}}</span>
 							<i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<!-- <ul class="dropdown-menu">
 								<li><a href="{{URL('/profil')}}"><i class="lnr lnr-user"></i> <span>Profil</span></a></li> -->
@@ -92,10 +92,25 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="{{URL('dashboardhome')}}" class="active"><i class="lnr lnr-home"></i> <span>Beranda</span></a></li>
-						<li><a href="{{URL('idebisnis')}}" class=""><i class="lnr lnr-rocket"></i> <span>Ide Bisnis</span></a></li>
+						<li>
+			 			<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Ide Bisnis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+			 			<div id="subPages" class="collapse ">
+			 				<ul class="nav">
+								<li><a href="{{URL('idebisnis')}}" ><i class="lnr lnr-rocket"></i> <span>Daftar Ide Bisnis</span></a></li>
+			 					<li><a href="{{URL('detailide')}}" ><i class="lnr lnr-eye"></i> <span>Detail Ide Bisnis</span></a></li>
+			 				</ul>
+			 			</div>
+			 		</li>
+					<li>
+						<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Mentor</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+						<div id="subPages2" class="collapse ">
+							<ul class="nav">
 						<li><a href="{{URL('listmentor')}}" class=""><i class="lnr lnr-user"></i> <span>Daftar Mentor</span></a></li>
+						<li><a href="{{URL('detailmentor')}}" class=""><i class="lnr lnr-eye"></i> <span>Detail Mentor</span></a></li>
+							</ul>
+						</div>
+					</li>
 						<li><a href="{{Route('getmentoring')}}" class=""><i class="lnr lnr-calendar-full"></i> <span>Riwayat Mentoring</span></a></li>
-
 						<li><a href="{{URL('kotakmasuk')}}" class=""><i class="lnr lnr-envelope"></i> <span>Kotak Masuk</span></a></li>
 
 						@if(Auth::check())
@@ -104,7 +119,7 @@
 							@endif
 
 						<!-- <li><a href="{{URL('statistik')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Statistik Mentoring</span></a></li> -->
-						
+
 
 
 						@else
@@ -112,17 +127,8 @@
 						@endif
 						<!-- <li><a href="{{URL('statistik')}}" class=""><i class="lnr lnr-chart-bars"></i> <span>Statistik Mentoring</span></a></li> -->
 
-						<!-- <li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
-								<ul class="nav">
-									<li><a href="page-profile.html" class="">Profile</a></li>
-									<li><a href="page-login.html" class="">Login</a></li>
-									<li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
-								</ul>
-							</div>
-						</li>
-						<li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
+
+						<!-- <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
 						<li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
 						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li> -->
 
