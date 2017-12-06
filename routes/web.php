@@ -44,9 +44,11 @@ Route::get('/setting', function(){
   return view('dashboard/setting');
 });
 
-Route::get('/kotakmasuk', function(){
-  return view('dashboard/kotakmasuk');
-});
+// Route::get('/kotakmasuk', function(){
+//   return view('dashboard/kotakmasuk');
+// });
+
+Route::get('/kotakmasuk', 'MessageController@inbox')->name('inbox');
 
 // Route::get('/detailide', function(){
 //   return view('dashboard/detailide');

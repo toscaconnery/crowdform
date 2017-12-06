@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Message;
 use Auth;
 use App\Team;
+use DB;
 
 class MessageController extends Controller
 {
@@ -50,4 +51,30 @@ class MessageController extends Controller
 	    	return back();
     	}
     }
+
+    public function inbox() {
+    	if(Auth::check()){
+    		if(Auth::user()->type_id == 1) { // dosen
+	    		$this->data['inbox'] = Message::where('destination', Auth::user()->user_id)->get();
+	    		$this->data['listInbox'] = $this->data['inbox'];
+	    		$listTim = Team::get();
+	    		$this->data['tim'] = array();
+	    		foreach($listTim as $b) {
+	    			$this->data['tim'][$b->team_id] = $b->team_name;
+	    		}
+	    		return view('dashboard.kotakmasuk', $this->data);
+    		}
+    		elseif(Auth::user()->type_id == 2) { // mahasiswa
+    			//cek punya tim
+    			if(isset(Auth::user()->team_id)) {
+    				$tim = Auth::user()->team_id;
+    				$this->data['inbox'] = Message::where('destination', Auth::user()->team_id)->get();
+    				$this->data['listInbox'] = $this->data['inbox'];
+    				return view('dashboard.kotakmasuk', $this->data);
+    			}
+    		}
+    	}
+    	return back();
+    }
+
 }
