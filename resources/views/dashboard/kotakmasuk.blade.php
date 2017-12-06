@@ -40,7 +40,9 @@
                           <td>{{$listInbox->created_at}}</td>
                           <td>
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ModalPesan{{$listInbox->message_id}}">Baca Pesan</button>
-                            <button type="button" class="btn btn-danger">Hapus Pesan</button>
+                            <a href="{{URL('')}}/hapuspesan/{{$listInbox->message_id}}">
+                              <button type="button" class="btn btn-danger">Hapus Pesan</button>  
+                            </a>
                           </td>
                         </tr>
                       @endforeach

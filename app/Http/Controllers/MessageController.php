@@ -77,4 +77,12 @@ class MessageController extends Controller
     	return back();
     }
 
+    public function deleteMessage($id_pesan) {
+    	if(Auth::check()) {
+    		$pesan = Message::where('message_id', $id_pesan)->first();
+    		$pesan->delete();
+    		return back();
+    	}
+    }
+
 }

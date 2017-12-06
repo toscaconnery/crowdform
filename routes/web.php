@@ -56,6 +56,8 @@ Route::get('/kotakmasuk', 'MessageController@inbox')->name('inbox');
 
 Route::get('/detailide/{id}', 'IdeController@detailIde')->name('detailIde');
 
+Route::get('/hapuspesan/{id}', 'MessageController@deleteMessage');
+
 Route::get('/detailmentor', function(){
   return view('dashboard/detailmentor');
 });
