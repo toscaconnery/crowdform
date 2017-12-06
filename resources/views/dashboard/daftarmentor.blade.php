@@ -25,7 +25,9 @@
                 <!-- PANEL WITH FOOTER -->
                 <div class="panel">
                   <div class="panel-heading">
-                    <h3 class="panel-title">{{$mentor->first_name}}{{" "}}{{$mentor->last_name}}</h3>
+                    <a href="{{URL('')}}/detailmentor/{{$mentor->user_id}}">
+                      <h3 class="panel-title">{{$mentor->first_name}}{{" "}}{{$mentor->last_name}}</h3>
+                    </a>
                     <div class="right">
                       <button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
                     </div>

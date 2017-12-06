@@ -104,13 +104,10 @@
 								</a>
 							</li>
 							<li>
-								<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Mentor</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-								<div id="subPages2" class="collapse ">
-									<ul class="nav">
-										<li><a href="{{URL('listmentor')}}" class=""><i class="lnr lnr-user"></i> <span>Daftar Mentor</span></a></li>
-										<li><a href="{{URL('detailmentor')}}" class=""><i class="lnr lnr-eye"></i> <span>Detail Mentor</span></a></li>
-									</ul>
-								</div>
+								<a href="{{URL('listmentor')}}" class="">
+									<i class="lnr lnr-user"></i> 
+									<span>Daftar Mentor</span>
+								</a>
 							</li>
 							@if(Auth::check())
 								<li>

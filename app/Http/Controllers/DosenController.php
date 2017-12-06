@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Biodata;
 use App\Team;
+use App\Mentoring;
 use Auth;
 use DB;
 
@@ -80,7 +81,10 @@ class DosenController extends Controller
             else{
                 //nggak punya tim
                 
-                $mentor = User::where('type_id', 1)->get();
+                $mentor = DB::table('users')
+                            ->join('biodata', 'biodata.user_id', '=', 'users.user_id')
+                            ->where('users.type_id', 1)
+                            ->get();
                 // dd($mentor);
                 $punyaMentor = 0;
                 
@@ -88,9 +92,42 @@ class DosenController extends Controller
             }
         }
         else {
-            $mentor = User::where('type_id', 1)->get();
+            $mentor = DB::table('users')
+                            ->join('biodata', 'biodata.user_id', '=', 'users.user_id')
+                            ->where('users.type_id', 1)
+                            ->get();
             $punyaMentor = 0;
             return view('dashboard.daftarmentor', ['listMentor' => $mentor, 'punyaMentor' => $punyaMentor]);
+        }
+    }
+
+    public function detailMentor($id_mentor) {
+        $this->data['mentor'] = DB::table('users')
+                            ->join('biodata', 'biodata.user_id', '=', 'users.user_id')
+                            ->where('users.user_id', $id_mentor)
+                            ->first();
+        $this->data['jumlahTim'] = Team::where('mentor_id', $id_mentor)
+                                        ->count();
+        $this->data['jumlahMengajar'] = Mentoring::where('filled_by', $id_mentor)
+                                        ->count();
+        $degree = Biodata::where('user_id', $id_mentor)
+                                        ->first();
+        if(isset($degree->s3_year)) {
+            $this->data['pendidikanTerakhir'] = "S3";
+        }
+        elseif(isset($degree->s2_year)) {
+            $this->data['pendidikanTerakhir'] = "S2";
+        }
+        elseif(isset($degree->s1_year)) {
+            $this->data['pendidikanTerakhir'] = "S1";
+        }
+        else {
+            $this->data['pendidikanTerakhir'] = "Tidak Kuliah";
+        }
+
+
+        if(!is_null($this->data['mentor'])) {
+            return view('dashboard.detailmentor', $this->data);
         }
     }
 }

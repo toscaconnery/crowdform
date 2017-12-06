@@ -18,20 +18,20 @@
   								<div class="profile-header">
   									<div class="overlay"></div>
   									<div class="profile-main">
-  										<img src="{{URL('')}}/dashboard/img/user-medium.png" class="img-circle" alt="Avatar">
-  										<h3 class="name">Samuel Gold</h3>
+  										<img src="{{URL('')}}/{{$mentor->user_photo}}" width="120" height="120" class="img-circle" alt="Avatar">
+  										<h3 class="name">{{$mentor->first_name}}{{" "}}{{$mentor->last_name}}</h3>
   										<span class="online-status status-available"></span>
   									</div>
   									<div class="profile-stat">
   										<div class="row">
   											<div class="col-md-4 stat-item">
-  												45 <span>Projects</span>
+  												{{$jumlahTim}} <span>Mentee</span>
   											</div>
   											<div class="col-md-4 stat-item">
-  												15 <span>Awards</span>
+  												{{$jumlahMengajar}} <span>Class</span>
   											</div>
   											<div class="col-md-4 stat-item">
-  												2174 <span>Points</span>
+  												{{$pendidikanTerakhir}} <span>Education</span>
   											</div>
   										</div>
   									</div>
@@ -42,10 +42,20 @@
   									<div class="profile-info">
   										<h4 class="heading">Biodata</h4>
   										<ul class="list-unstyled list-justify">
-  											<li>Tempat & Tanggal Lahir <span>24 Aug, 2016</span></li>
-  											<li>Handphone <span>(124) 823409234</span></li>
-  											<li>Email <span>samuel@mydomain.com</span></li>
-                        <li>Website <span>samuelmydomain.com</span></li>
+  											<li>Handphone <span>{{$mentor->phone_number}}</span></li>
+  											<li>Email <span>{{$mentor->email}}</span></li>
+                        @if(isset($mentor->s1_year))
+                          <li>S1 <span>{{$mentor->s1}}</span></li>
+                          <li>S1 Year <span>{{$mentor->s1_year}}</span></li>
+                        @endif
+                        @if(isset($mentor->s2_year))
+                          <li>S2 <span>{{$mentor->s2}}</span></li>
+                          <li>S2 Year <span>{{$mentor->s2_year}}</span></li>
+                        @endif
+                        @if(isset($mentor->s3_year))
+                          <li>S3 <span>{{$mentor->s3}}</span></li>
+                          <li>S3 Year <span>{{$mentor->s3_year}}</span></li>
+                        @endif
   										</ul>
   									</div>
   								</div>
@@ -53,7 +63,7 @@
   							</div>
   							<!-- END LEFT COLUMN -->
   							<!-- RIGHT COLUMN -->
-  							<div class="profile-right" style="padding-bottom:7em;">
+  							{{-- <div class="profile-right" style="padding-bottom:7em;">
   								<h4 class="heading">Samuel's Awards</h4>
   								<!-- AWARDS -->
   								<div class="awards">
@@ -94,7 +104,7 @@
   								</div>
   								<!-- END AWARDS -->
   								<!-- TABBED CONTENT -->
-  							</div>
+  							</div> --}}
   							<!-- END RIGHT COLUMN -->
   						</div>
   					</div>
